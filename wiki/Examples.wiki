@@ -1,5 +1,5 @@
 #labels samples,examples,Featured
-= Some Quick Usage Examples =
+= Basic Usage  =
 {{{
 var today = Date.today();
 
@@ -22,5 +22,4 @@ This stuff is very likely to change soon...
 {{{
 var dt = (21).yearsAgo();
 }}}
-
 
