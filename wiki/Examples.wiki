@@ -1,0 +1,26 @@
+#labels samples,examples,Featured
+= Some Quick Usage Examples =
+{{{
+var today = Date.today();
+
+var birthdate = Date.on(2007, 3, 28); // Uses real month, not zero-based index
+birthdate.getMonth(); // Equally sensible
+=> 3 
+
+birthdate.getJSMonth(); // For when you need the legacy behavior
+=> 2
+
+function isAdult(birthdate) {
+  var eighteenth_birthday = birthdate.addYears(18);
+  return eighteenth_birthday.onOrBefore(Date.today());
+}
+}}}
+
+= Experimental =
+
+This stuff is very likely to change soon...
+{{{
+var dt = (21).yearsAgo();
+}}}
+
+
