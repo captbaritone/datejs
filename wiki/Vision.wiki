@@ -1,0 +1,8 @@
+#summary Where this train is going...
+#labels Featured
+
+= Vision =
+The idea is to create a *natural* API for developers to use, not to be all-inclusive or especially JS-like. By this I mean that we will respect JS convention where it makes sense and depart from it where it's just plain stupid or unnatural like getMonth();  
+
+= File Size = 
+Prototype is a sizeable library. We need to be mindful of size while still providing a worthwhile set of features that eliminate the major pain points of JS date manipulation.
