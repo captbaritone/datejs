@@ -1,9 +1,9 @@
 #summary API documentation.
+#labels Featured,documentation
 
 = Date =
 
 Coming soon.
-
 
 = Timespan =
 
