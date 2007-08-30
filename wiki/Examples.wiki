@@ -16,11 +16,6 @@ function isAdult(birthdate) {
   var eighteenth_birthday = birthdate.addYears(18);
   return eighteenth_birthday.onOrBefore(Date.today());
 }
-}}}
 
-= Experimental =
-
-This stuff is very likely to change soon...
-{{{
-var dt = (21).yearsAgo();
+var dt = (21).years().ago();
 }}}
