@@ -1,6 +1,8 @@
 #summary API documentation.
 #labels Featured,documentation
 
+Check the examples page (or the source code) for some info...
+
 = Date =
 
 Coming soon.
