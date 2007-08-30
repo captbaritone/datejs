@@ -1,4 +1,4 @@
-#summary API Basic usage examples to get people started till we get some real docs.
+#summary Basic usage examples to get people started till we get some real docs.
 #labels samples,examples,Featured
 
 = Basic Usage  =
