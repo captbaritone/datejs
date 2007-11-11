@@ -1,8 +1,0 @@
-#summary How to contribute.
-#labels Featured
-
-= Participation is Welcome! =
-We welcome anyone who wants to contribute, but there are a couple of ground rules.
-
- * Only test-driven patches will be accepted. BDD-style tests in /test directory 
- * Apache voting system (RTC) for patch acceptance
