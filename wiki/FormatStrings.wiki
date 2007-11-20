@@ -1,3 +1,5 @@
+# Summary Format Strings are used to specify date formats for display and input.
+
 {{{
 Format  Description                                                                  Example
 ------  ---------------------------------------------------------------------------  -----------------------
