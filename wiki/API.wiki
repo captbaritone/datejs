@@ -1,135 +1,127 @@
 #summary Date class and instance methods provided by the DateJS library.
 
-*Version:* 1.0 Alpha-1
-
-*Build Date:* 
-
-*Copyright:* (c) 2006-2007, [http://www.coolite.com/ Coolite, Inc.]. All rights reserved.
-
-*License:* Licensed under [http://www.datejs.com/license/ The MIT License].
-
 = Public Methods =
 
-*Date.getDayNumberFromName* ( dayName ) : dayNumber
+*Date.getDayNumberFromName* ( `String` dayName ) : `Number`
 
  Gets the day number (0-6) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated day name.
 
 
-*Date.getDaysInMonth* ( year, month ) : number of days
+*Date.getDaysInMonth* ( `Number` year, `Number` month ) : `Number`
 
  Gets the number of days in the month, given a year and month value. Automatically corrects for leap year.
 
 
-*Date.getMonthNumberFromName* ( monthName ) : monthNumber
+*Date.getMonthNumberFromName* ( `String` monthName ) : `Number`
 
  Gets the month number (0-11) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated month name.
 
 
-*Date.getTimeZoneAbbreviation* ( timezoneOffset, isDayLightSavingsTime ) : timezoneAbbreviation
+*Date.getTimeZoneAbbreviation* ( `Number` timezoneOffset, `Boolean` isDayLightSavingsTime ) : `String`
 
  Returns a [CultureInfo culture-specific] timezone abbreviation based on a given offset and a boolean indicating whether daylight savings time is in effect.
 
 
-*Date.getTimeZoneOffset* ( timezoneName, isDayLightSavingsTime ) : timezoneOffset
+*Date.getTimeZoneOffset* ( `String` timezoneName, `Boolean` isDayLightSavingsTime ) : `Number`
 
  Gets the timezone offset if given a [CultureInfo culture-specific] string which is a valid full or abbreviated timezone name and a boolean indicating whether daylight savings time is in effect.
 
 
-*Date.isLeapYear* ( year ) : true or false
+*Date.isLeapYear* ( `Number` year ) : `Boolean`
 
  Returns true if the given year is a leap year, false otherwise.
 
-*add* ( object ) : this
+*add* ( `Object` object ) : `Date`
 
  Adds (or subtracts) to the value of the year, month, day, hour, minute, second, millisecond of the date instance using given configuration object. Positive and Negative values allowed.
 
 
-*addHours* ( hours ) : this
+*addHours* ( `Number` hours ) : `Date`
 
  Adds the specified number of hours to this instance given the number of hours to add. The number can be positive or negative.
 
 
-*addMilliseconds* ( milliseconds ) : this
+*addMilliseconds* ( `Number` milliseconds ) : `Date`
 
  Adds the specified number of milliseconds to this instance.
 
 
-*addMinutes* ( minutes ) : this
+*addMinutes* ( `Number` minutes ) : `Date`
 
  Adds the specified number of minutes to this instance given the number of minutes to add. The number can be positive or negative.
 
 
-*addMonths* ( months ) : this
+*addMonths* ( `Number` months ) : `Date`
 
  Adds the specified number of months to this instance given the number of months to add. The number can be positive or negative.
 
 
-*addSeconds* ( seconds ) : this
+*addSeconds* ( `Number` seconds ) : `Date`
 
  Adds the specified number of seconds to this instance given the number of seconds to add. The number can be positive or negative.
 
 
-*addWeeks* ( weeks ) : this
+*addWeeks* ( `Number` weeks ) : `Date`
 
  Adds the specified number of weeks to this instance given the number of weeks to add. The number can be positive or negative.
 
 
-*addYears* ( years ) : this
+*addYears* ( `Number` years ) : `Date`
 
  Adds the specified number of years to this instance given the number of years to add. The number can be positive or negative.
 
 
-*between* ( startDate, endDate ) : true of false
+*between* ( `Date` startDate, `Date` endDate ) : `Boolean`
 
  Determines is this instance is between a range of two dates or equal to either the start or end dates.
 
 
-*clearTime* (  ) : this
+*clearTime* (  ) : `Date`
 
  Resets the time of this Date object to 12:00 AM (00:00), which is the start of the day.
 
 
-*clone* (  ) : Date
+*clone* (  ) : `Date`
 
  Returns a new Date object that is an exact date and time copy of the original instance.
 
 
-*compareTo* ( date ) : -1, 0, 1
+*compareTo* ( `Date` date ) : `Number`
 
  Compares this instance to a Date object and return an number indication of their relative values. 1 = this is greater than date, -1 = this is less than date, 0 = values are equal.
 
 
-*equals* ( date ) : true or false
+*equals* ( `Date` date ) : `Boolean`
 
  Compares this instance to another Date object and returns true if they are equal, false otherwise.
 
 
-*getDayName* ( useAbbreviation ) : dayName
+*getDayName* ( `Boolean` useAbbreviation ) : `String`
 
  Gets the name of the day of the week. Set useAbbreviation to true to return the abbreviated name of the day of the week (optional).
 
 
-*getDayOfYear* (  ) : dayNumberInYear
+*getDayOfYear* (  ) : `Number`
 
  Get the numeric day number of the year, adjusted for leap year.
 
 
-*getDaysInMonth* (  ) : true or false
+*getDaysInMonth* (  ) : `Boolean`
 
  Get the number of days in the current month, adjusted for leap year. Returns the number of days in the month.
 
 
-*getMonthName* ( useAbbreviation ) : monthName
+*getMonthName* ( `Boolean` useAbbreviation ) : `String`
 
  Gets the name of the month. Set useAbbreviation to true to return the abbreviated name of the month (optional).
 
 
-*getParseFunction* ( formatStringOrArray ) : function
+*getParseFunction* ( `String` formatStringOrArray ) : `Function`
 
  Returns a function that can be used to parse a string and return a date, given a format (string) or formats (string). The format of the string passed to the resulting function must match one of the supplied formats exactly or a parse exception will be thrown.
 
 
-*getTimezone* (  ) : timezoneAbbreviation
+*getTimezone* (  ) : `String`
 
  Get the timezone abbreviation of the current date.
 
@@ -139,106 +131,106 @@
  Get the offset from UTC of the current date. Returns the 4-character offset string prefixed with + or - (e.g. "-0500").
 
 
-*getWeekOfYear* ( firstDayOfWeek ) : weekNumberInYear
+*getWeekOfYear* ( `Number` firstDayOfWeek ) : `Number`
 
  Get the week of the year for the current date instance. Takes an optional parameter for the firstDayOfWeek [0-6].
 
 
-*isDST* (  ) : true or false
+*isDST* (  ) : `Boolean`
 
  Determine whether Daylight Saving Time (DST) is in effect.
 
 
-*isLeapYear* (  ) : true or false
+*isLeapYear* (  ) : `Boolean`
 
  Determines whether or not this instance is in a leap year. Returns true if this instance is in a leap year, else false.
 
 
-*isWeekday* (  ) : true or false
+*isWeekday* (  ) : `Boolean`
 
  Determines whether or not this instance is a weekday. Returns true if this instance is a weekday, false otherwise.
 
 
-*moveToDayOfWeek* ( dayOfWeek, pastOrFuture ) : this
+*moveToDayOfWeek* ( `Number` dayOfWeek, `Number` pastOrFuture ) : `Date`
 
  Move to the next or last dayOfWeek based on the pastOrFuture value - future (+1) or past (-1). Defaults to future. [Optional].
 
 
-*moveToFirstDayOfTheMonth* (  ) : this
+*moveToFirstDayOfTheMonth* (  ) : `Date`
 
  Moves the date to the first day of the month.
 
 
-*moveToLastDayOfTheMonth* (  ) : this
+*moveToLastDayOfTheMonth* (  ) : `Date`
 
  Moves the date to the last day of the month.
 
 
-*moveToMonth* ( monthNumber, pastOrFuture ) : this
+*moveToMonth* ( `Number` monthNumber, `Number` pastOrFuture ) : `Date`
 
  Move to the next or previous month indicated by the monthNumber based on the pastOrFuture value - future (+1) or past (-1). Defaults to future. [Optional].
 
 
-*Date.parse* ( dateString ) : date
+*Date.parse* ( `String` dateString ) : `Date`
 
  Converts the specified string value into its !JavaScript Date equivalent using [CultureInfo culture-specific] format information.
 
 
-*Date.parseExact* ( dateString, formatStringOrArray ) : date
+*Date.parseExact* ( `String` dateString, `String` formatStringOrArray ) : `Date`
 
  Converts the specified string value into its !JavaScript Date equivalent using the specified format (string) or formats (array). The format of the string value must match one of the supplied formats exactly.
 
 
-*set* ( object ) : this
+*set* ( `Object` object ) : `Date`
 
  Set the value of year, month, day, hour, minute, second, millisecond of date instance using given configuration object.
 
 
-*setTimezone* ( timezoneAbbreviation ) : this
+*setTimezone* ( `String` timezoneAbbreviation ) : `Date`
 
  Set the timezone for the current date using a [CultureInfo culture-specific] timezone abbreviation (ex: 'PST'). Note that in most !JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
 
 
-*setTimezoneOffset* ( timezoneOffset ) : this
+*setTimezoneOffset* ( `Number` timezoneOffset ) : `Date`
 
  Set the timezone for the current date using an offset (ex: '-0700'). Note that in most !JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
 
 
-*toString* ( format ) : formattedDateString
+*toString* ( `String` format ) : `String`
 
  Converts the value of the current Date object to its equivalent string representation. Use format argument to specify format (optional). See FormatStrings for more info.
 
 
-*Date.validateDay* ( day, year, monthNumber ) : true or false
+*Date.validateDay* ( `Number` day, `Number` year, `Number` monthNumber ) : `Boolean`
 
  Validates the number is within an acceptable range for the days in a month [0-MaxDaysInMonth].
 
 
-*Date.validateHour* ( hour ) : true or false
+*Date.validateHour* ( `Number` hour ) : `Boolean`
 
  Validates the number is within an acceptable range for hours [0-23]. Returns true if within range, otherwise false.
 
 
-*Date.validateMillisecond* ( milliseconds ) : true or false
+*Date.validateMillisecond* ( `Number` milliseconds ) : `Boolean`
 
  Validates the number is within an acceptable range for milliseconds [0-999]. Returns true if within range, otherwise false.
 
 
-*Date.validateMinute* ( minutes ) : true or false
+*Date.validateMinute* ( `Number` minutes ) : `Boolean`
 
  Validates the number is within an acceptable range for minutes [0-59]. Returns true if within range, otherwise false.
 
 
-*Date.validateMonth* ( month ) : true or false
+*Date.validateMonth* ( `Number` month ) : `Boolean`
 
  Validates the number is within an acceptable range for months [0-11].
 
 
-*Date.validateSecond* ( second ) : true or false
+*Date.validateSecond* ( `Number` second ) : `Boolean`
 
  Validates the number is within an acceptable range for seconds [0-59]. Returns true if within range, otherwise false.
 
 
-*Date.validateYear* ( year ) : true or false
+*Date.validateYear* ( `Number` year ) : `Boolean`
 
  Validates the number is within an acceptable range for years [0-9999].
