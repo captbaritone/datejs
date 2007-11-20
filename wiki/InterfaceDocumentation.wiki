@@ -1,14 +1,22 @@
 *Version:* 1.0 Alpha-1
 
-*Build Date:* 12-Nov-2007
+*Build Date:* 
 
-*Copyright:* (c) 2006-2007, Coolite Inc. (http://www.coolite.com/). All rights reserved.
+*Copyright:* (c) 2006-2007, [ http://www.coolite.com/ Coolite, Inc.]. All rights reserved.
 
-*License:* Licensed under The MIT License. See license.txt and http://www.datejs.com/license/. 
+*License:* Licensed under [ http://www.datejs.com/license/ The MIT License].
 
 = Class Methods =
 
-*Date.getMonthNumberFromName( monthName ) : monthNumber*
+  
+*getMonthNumberFromName ( monthName ) : monthNumber*
 
-Gets the month number (0-11) if given a (culture) specific string which is a valid full or abbreviated month name.
+Gets the month number (0-11) if given a (culture-specific) string which is a valid full or abbreviated month name.
+
+
+  
+*getDayNumberFromName ( dayName ) : dayNumber*
+
+Gets the day number (0-6) if given a (culture-specific) string which is a valid full or abbreviated day name.
+
 
