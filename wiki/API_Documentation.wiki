@@ -8,37 +8,37 @@
 
 = Class Methods =
 
-*getDayNumberFromName ( dayName ) : dayNumber*
+*Date.getDayNumberFromName ( `String` dayName ) : dayNumber*
 
 Gets the day number (0-6) if given a (culture-specific) string which is a valid full or abbreviated day name.
 
 
 
-*getDaysInMonth ( year, month ) : number of days*
+*Date.getDaysInMonth ( `Number` year, `Number` month ) : number of days*
 
 Gets the number of days in the month, given a year and month value. Automatically corrects for LeapYear.
 
 
 
-*getMonthNumberFromName ( monthName ) : monthNumber*
+*Date.getMonthNumberFromName ( `String` monthName ) : monthNumber*
 
 Gets the month number (0-11) if given a (culture-specific) string which is a valid full or abbreviated month name.
 
 
 
-*getTimeZoneAbbreviation ( timezoneOffset, isDayLightSavingsTime ) : timezoneAbbreviation*
+*Date.getTimeZoneAbbreviation ( timezoneOffset, isDayLightSavingsTime ) : timezoneAbbreviation*
 
 Returns a (culture-specific) timezone abbreviation based on a given offset and a boolean indicating whether daylight savings time is in effect.
 
 
 
-*getTimeZoneOffset ( timezoneName, isDayLightSavingsTime ) : timezoneOffset*
+*Date.getTimeZoneOffset ( timezoneName, isDayLightSavingsTime ) : timezoneOffset*
 
 Gets the timezone offset if given a (culture-specific) string which is a valid full or abbreviated timezone name and a boolean indicating whether daylight savings time is in effect.
 
 
 
-*isLeapyear ( year ) : true or false*
+*Date.isLeapyear ( `Number` year ) : true or false*
 
 Returns true if the given year is a leap year, false otherwise.
 
