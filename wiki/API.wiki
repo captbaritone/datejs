@@ -12,32 +12,32 @@
 
 *getDayNumberFromName* ( dayName ) : dayNumber
 
-Gets the day number (0-6) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated day name.
+ Gets the day number (0-6) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated day name.
 
 
 *getDaysInMonth* ( year, month ) : number of days
 
-Gets the number of days in the month, given a year and month value. Automatically corrects for leap year.
+ Gets the number of days in the month, given a year and month value. Automatically corrects for leap year.
 
 
 *getMonthNumberFromName* ( monthName ) : monthNumber
 
-Gets the month number (0-11) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated month name.
+ Gets the month number (0-11) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated month name.
 
 
 *getTimeZoneAbbreviation* ( timezoneOffset, isDayLightSavingsTime ) : timezoneAbbreviation
 
-Returns a [CultureInfo culture-specific] timezone abbreviation based on a given offset and a boolean indicating whether daylight savings time is in effect.
+ Returns a [CultureInfo culture-specific] timezone abbreviation based on a given offset and a boolean indicating whether daylight savings time is in effect.
 
 
 *getTimeZoneOffset* ( timezoneName, isDayLightSavingsTime ) : timezoneOffset
 
-Gets the timezone offset if given a [CultureInfo culture-specific] string which is a valid full or abbreviated timezone name and a boolean indicating whether daylight savings time is in effect.
+ Gets the timezone offset if given a [CultureInfo culture-specific] string which is a valid full or abbreviated timezone name and a boolean indicating whether daylight savings time is in effect.
 
 
 *isLeapYear* ( year ) : true or false
 
-Returns true if the given year is a leap year, false otherwise.
+ Returns true if the given year is a leap year, false otherwise.
 
 
 
@@ -45,12 +45,12 @@ Returns true if the given year is a leap year, false otherwise.
 
 *add* ( object ) : this*
 
-Adds (or subtracts) to the value of the year, month, day, hour, minute, second, millisecond of the date instance using given configuration object. Positive and Negative values allowed.
+ Adds (or subtracts) to the value of the year, month, day, hour, minute, second, millisecond of the date instance using given configuration object. Positive and Negative values allowed.
 
 
 *addHours* ( hours ) : this*
 
-Adds the specified number of hours to this instance given the number of hours to add. The number can be positive or negative.
+ Adds the specified number of hours to this instance given the number of hours to add. The number can be positive or negative.
 
 
 *addMilliseconds* ( milliseconds ) : this*
@@ -246,5 +246,3 @@ Validates the number is within an acceptable range for seconds [0-59]. Returns t
 *validateYear* ( year ) : true or false*
 
 Validates the number is within an acceptable range for years [0-9999].
-
-
