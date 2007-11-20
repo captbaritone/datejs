@@ -8,15 +8,43 @@
 
 = Class Methods =
 
-  
-*getMonthNumberFromName ( monthName ) : monthNumber*
-
-Gets the month number (0-11) if given a (culture-specific) string which is a valid full or abbreviated month name.
-
-
-  
 *getDayNumberFromName ( dayName ) : dayNumber*
 
 Gets the day number (0-6) if given a (culture-specific) string which is a valid full or abbreviated day name.
 
+*getDaysInMonth ( year, month ) : number of days*
 
+Gets the number of days in the month, given a year and month value. Automatically corrects for LeapYear.
+
+*getMonthNumberFromName ( monthName : String ) : monthNumber*
+
+Gets the month number (0-11) if given a (culture-specific) string which is a valid full or abbreviated month name.
+
+*getTimeZoneAbbreviation ( timezoneOffset, isDayLightSavingsTime ) : timezoneAbbreviation*
+
+Returns a (culture-specific) timezone abbreviation based on a given offset and a boolean indicating whether daylight savings time is in effect.
+
+*getTimeZoneOffset ( timezoneName, isDayLightSavingsTime ) : timezoneOffset*
+
+Gets the timezone offset if given a (culture-specific) string which is a valid full or abbreviated timezone name and a boolean indicating whether daylight savings time is in effect.
+
+*isLeapyear ( year ) : true or false*
+
+Returns true if the given year is a leap year, false otherwise.
+
+
+= Instance Methods =
+
+*between ( startDate, endDate ) : *
+
+
+*clone (  ) : Date*
+
+Returns a new Date object that is an exact date and time copy of the original instance.
+
+*compareTo ( date ) : -1, 0, 1*
+
+Compares this instance to a Date object and return an number indication of their relative values. 1 = this is greater than date, -1 = this is less than date, 0 = values are equal.
+*equals ( date ) : true or false*
+
+Compares this instance to another Date object and returns true if they are equal, false otherwise.
