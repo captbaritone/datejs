@@ -1,4 +1,4 @@
-#summary Date class and instance methods provided by the DateJS library.
+#summary xDate class and instance methods provided by the DateJS library.
 
 *Version:* 1.0 Alpha-1
 
