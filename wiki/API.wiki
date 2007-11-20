@@ -10,8 +10,7 @@
 
 = Class Methods =
 
-||*getDayNumberFromName ( dayName ) : dayNumber*||Gets the day number (0-6) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated day name.
-||
+||*getDayNumberFromName ( dayName ) : dayNumber*||Gets the day number (0-6) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated day name.||
 
 
 ||*getDaysInMonth ( year, month ) : number of days*||Gets the number of days in the month, given a year and month value. Automatically corrects for leap year.
@@ -241,5 +240,3 @@ Validates the number is within an acceptable range for seconds [0-59]. Returns t
 *validateYear ( year ) : true or false*
 
 Validates the number is within an acceptable range for years [0-9999].
-
-
