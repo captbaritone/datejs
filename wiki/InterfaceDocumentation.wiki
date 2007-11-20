@@ -128,9 +128,24 @@ Determines whether or not this instance is in a leap year. Returns true if this 
 Determines whether or not this instance is a weekday. Returns true if this instance is a weekday, false otherwise.
 
 
-*moveToLastDayOfTheMonth (  ) : this*
+*moveToDayOfWeek ( dayOfWeek, pastOrFuture ) : this*
+
+Move to the next or last dayOfWeek based on the pastOrFuture value - future (+1) or past (-1). Defaults to future. [Optional].
+
+
+*moveToFirstDayOfTheMonth (  ) : this*
 
 Moves the date to the first day of the month.
+
+
+*moveToLastDayOfTheMonth (  ) : this*
+
+Moves the date to the last day of the month.
+
+
+*moveToMonth ( monthNumber, pastOrFuture ) : this*
+
+Move to the next or previous month indicated by the monthNumber based on the pastOrFuture value - future (+1) or past (-1). Defaults to future. [Optional].
 
 
 *set ( object ) : this*
