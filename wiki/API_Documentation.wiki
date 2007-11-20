@@ -1,0 +1,188 @@
+*Version:* 1.0 Alpha-1
+
+*Build Date:* 
+
+*Copyright:* (c) 2006-2007, [http://www.coolite.com/ Coolite, Inc.]. All rights reserved.
+
+*License:* Licensed under [http://www.datejs.com/license/ The MIT License].
+
+= Class Methods =
+
+*getDayNumberFromName ( dayName ) : dayNumber*
+
+Gets the day number (0-6) if given a (culture-specific) string which is a valid full or abbreviated day name.
+
+
+
+*getDaysInMonth ( year, month ) : number of days*
+
+Gets the number of days in the month, given a year and month value. Automatically corrects for LeapYear.
+
+
+
+*getMonthNumberFromName ( monthName ) : monthNumber*
+
+Gets the month number (0-11) if given a (culture-specific) string which is a valid full or abbreviated month name.
+
+
+
+*getTimeZoneAbbreviation ( timezoneOffset, isDayLightSavingsTime ) : timezoneAbbreviation*
+
+Returns a (culture-specific) timezone abbreviation based on a given offset and a boolean indicating whether daylight savings time is in effect.
+
+
+
+*getTimeZoneOffset ( timezoneName, isDayLightSavingsTime ) : timezoneOffset*
+
+Gets the timezone offset if given a (culture-specific) string which is a valid full or abbreviated timezone name and a boolean indicating whether daylight savings time is in effect.
+
+
+
+*isLeapyear ( year ) : true or false*
+
+Returns true if the given year is a leap year, false otherwise.
+
+
+
+
+= Instance Methods =
+
+*add ( object ) : this*
+
+Adds (or subtracts) to the value of the year, month, day, hour, minute, second, millisecond of the date instance using given configuration object. Positive and Negative values allowed.
+
+
+*addHours ( hours ) : this*
+
+Adds the specified number of hours to this instance given the number of hours to add. The number can be positive or negative.
+
+
+*addMilliseconds ( milliseconds ) : this*
+
+Adds the specified number of milliseconds to this instance.
+
+
+*addMinutes ( minutes ) : this*
+
+Adds the specified number of minutes to this instance given the number of minutes to add. The number can be positive or negative.
+
+
+*addMonths ( months ) : this*
+
+Adds the specified number of months to this instance given the number of months to add. The number can be positive or negative.
+
+
+*addSeconds ( seconds ) : this*
+
+Adds the specified number of seconds to this instance given the number of seconds to add. The number can be positive or negative.
+
+
+*addWeeks ( weeks ) : this*
+
+Adds the specified number of weeks to this instance given the number of weeks to add. The number can be positive or negative.
+
+
+*addYears ( years ) : this*
+
+Adds the specified number of years to this instance given the number of years to add. The number can be positive or negative.
+
+
+*between ( startDate, endDate ) : true of false*
+
+Determines is this instance is between a range of two dates or equal to either the start or end dates.
+
+
+*clearTime (  ) : this*
+
+Resets the time of this Date object to 12:00 AM (00:00), which is the start of the day.
+
+
+*clone (  ) : Date*
+
+Returns a new Date object that is an exact date and time copy of the original instance.
+
+
+
+*compareTo ( date ) : -1, 0, 1*
+
+Compares this instance to a Date object and return an number indication of their relative values. 1 = this is greater than date, -1 = this is less than date, 0 = values are equal.
+
+
+*equals ( date ) : true or false*
+
+Compares this instance to another Date object and returns true if they are equal, false otherwise.
+
+
+*getDaysInMonth (  ) : true or false*
+
+Get the number of days in the current month, adjusted for leap year. Returns the number of days in the month.
+
+
+*isLeapYear (  ) : true or false*
+
+Determines whether or not this instance is in a leap year. Returns true if this instance is in a leap year, else false.
+
+
+*isWeekday (  ) : true or false*
+
+Determines whether or not this instance is a weekday. Returns true if this instance is a weekday, false otherwise.
+
+
+*moveToDayOfWeek ( dayOfWeek, pastOrFuture ) : this*
+
+Move to the next or last dayOfWeek based on the pastOrFuture value - future (+1) or past (-1). Defaults to future. [Optional].
+
+
+*moveToFirstDayOfTheMonth (  ) : this*
+
+Moves the date to the first day of the month.
+
+
+*moveToLastDayOfTheMonth (  ) : this*
+
+Moves the date to the last day of the month.
+
+
+*moveToMonth ( monthNumber, pastOrFuture ) : this*
+
+Move to the next or previous month indicated by the monthNumber based on the pastOrFuture value - future (+1) or past (-1). Defaults to future. [Optional].
+
+
+*set ( object ) : this*
+
+Set the value of year, month, day, hour, minute, second, millisecond of date instance using given configuration object.
+
+
+*validateDay ( day, year, monthNumber ) : true or false*
+
+Validates the number is within an acceptable range for the days in a month [0-MaxDaysInMonth].
+
+
+*validateHour ( hour ) : true or false*
+
+Validates the number is within an acceptable range for hours [0-23]. Returns true if within range, otherwise false.
+
+
+*validateMillisecond ( milliseconds ) : true or false*
+
+Validates the number is within an acceptable range for milliseconds [0-999]. Returns true if within range, otherwise false.
+
+
+*validateMinute ( minutes ) : true or false*
+
+Validates the number is within an acceptable range for minutes [0-59]. Returns true if within range, otherwise false.
+
+
+*validateMonth ( month ) : true or false*
+
+Validates the number is within an acceptable range for months [0-11].
+
+
+*validateSecond ( second ) : true or false*
+
+Validates the number is within an acceptable range for seconds [0-59]. Returns true if within range, otherwise false.
+
+
+*validateYear ( year ) : true or false*
+
+Validates the number is within an acceptable range for years [0-9999].
