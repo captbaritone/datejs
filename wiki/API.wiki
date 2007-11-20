@@ -10,7 +10,7 @@
 
 *getDayNumberFromName ( dayName ) : dayNumber*
 
-Gets the day number (0-6) if given a [/p/datejs/wiki/CultureInfo culture-specific] string which is a valid full or abbreviated day name.
+Gets the day number (0-6) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated day name.
 
 
 
@@ -22,19 +22,19 @@ Gets the number of days in the month, given a year and month value. Automaticall
 
 *getMonthNumberFromName ( monthName ) : monthNumber*
 
-Gets the month number (0-11) if given a [/p/datejs/wiki/CultureInfo culture-specific] string which is a valid full or abbreviated month name.
+Gets the month number (0-11) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated month name.
 
 
 
 *getTimeZoneAbbreviation ( timezoneOffset, isDayLightSavingsTime ) : timezoneAbbreviation*
 
-Returns a [/p/datejs/wiki/CultureInfo culture-specific] timezone abbreviation based on a given offset and a boolean indicating whether daylight savings time is in effect.
+Returns a [CultureInfo culture-specific] timezone abbreviation based on a given offset and a boolean indicating whether daylight savings time is in effect.
 
 
 
 *getTimeZoneOffset ( timezoneName, isDayLightSavingsTime ) : timezoneOffset*
 
-Gets the timezone offset if given a [/p/datejs/wiki/CultureInfo culture-specific] string which is a valid full or abbreviated timezone name and a boolean indicating whether daylight savings time is in effect.
+Gets the timezone offset if given a [CultureInfo culture-specific] string which is a valid full or abbreviated timezone name and a boolean indicating whether daylight savings time is in effect.
 
 
 
@@ -190,12 +190,12 @@ Move to the next or previous month indicated by the monthNumber based on the pas
 
 *parse ( dateString ) : date*
 
-Converts the specified string value into its JavaScript Date equivalent using [/p/datejs/wiki/CultureInfo culture-specific] format information.
+Converts the specified string value into its !JavaScript Date equivalent using [CultureInfo culture-specific] format information.
 
 
 *parseExact ( dateString, formatStringOrArray ) : date*
 
-Converts the specified string value into its JavaScript Date equivalent using the specified format (string) or formats (array). The format of the string value must match one of the supplied formats exactly.
+Converts the specified string value into its !JavaScript Date equivalent using the specified format (string) or formats (array). The format of the string value must match one of the supplied formats exactly.
 
 
 *set ( object ) : this*
@@ -205,12 +205,12 @@ Set the value of year, month, day, hour, minute, second, millisecond of date ins
 
 *setTimezone ( timezoneAbbreviation ) : this*
 
-Set the timezone for the current date using a [/p/datejs/wiki/CultureInfo culture-specific] timezone abbreviation (ex: 'PST'). Note that in most JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
+Set the timezone for the current date using a [CultureInfo culture-specific] timezone abbreviation (ex: 'PST'). Note that in most !JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
 
 
 *setTimezoneOffset ( timezoneOffset ) : this*
 
-Set the timezone for the current date using an offset (ex: '-0700'). Note that in most JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
+Set the timezone for the current date using an offset (ex: '-0700'). Note that in most !JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
 
 
 *toString ( format ) : formattedDateString*
