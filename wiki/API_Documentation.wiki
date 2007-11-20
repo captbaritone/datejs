@@ -115,7 +115,7 @@ Compares this instance to another Date object and returns true if they are equal
 
 *getDayName ( useAbbreviation ) : dayName*
 
-Gets the name of the day of the week. Set useAbbreviation to true to return the abbreviated name of the day of the week [optional].
+Gets the name of the day of the week. Set useAbbreviation to true to return the abbreviated name of the day of the week (optional).
 
 
 *getDayOfYear (  ) : dayNumberInYear*
@@ -130,7 +130,7 @@ Get the number of days in the current month, adjusted for leap year. Returns the
 
 *getMonthName ( useAbbreviation ) : monthName*
 
-Gets the name of the month. Set useAbbreviation to true to return the abbreviated name of the month [optional].
+Gets the name of the month. Set useAbbreviation to true to return the abbreviated name of the month (optional).
 
 
 *getParseFunction ( formatStringOrArray ) : function*
@@ -215,7 +215,7 @@ Set the timezone for the current date using an offset (ex: '-0700'). Note that i
 
 *toString ( format ) : formattedDateString*
 
-Converts the value of the current Date object to its equivalent string representation. Use format argument to specify format [optional]. See FormatStrings for more info.
+Converts the value of the current Date object to its equivalent string representation. Use format argument to specify format (optional). See FormatStrings for more info.
 
 
 *validateDay ( day, year, monthNumber ) : true or false*
