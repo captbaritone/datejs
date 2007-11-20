@@ -1,3 +1,5 @@
+#summary Date class and instance methods provided by the DateJS library.
+
 *Version:* 1.0 Alpha-1
 
 *Build Date:* 
@@ -16,7 +18,7 @@ Gets the day number (0-6) if given a [CultureInfo culture-specific] string which
 
 *getDaysInMonth ( year, month ) : number of days*
 
-Gets the number of days in the month, given a year and month value. Automatically corrects for LeapYear.
+Gets the number of days in the month, given a year and month value. Automatically corrects for !LeapYear.
 
 
 
@@ -153,14 +155,14 @@ Get the offset from UTC of the current date. Returns the 4-character offset stri
 Get the week of the year for the current date instance. Takes an optional parameter for the firstDayOfWeek [0-6].
 
 
+*is!LeapYear (  ) : true or false*
+
+Determines whether or not this instance is in a leap year. Returns true if this instance is in a leap year, else false.
+
+
 *isDST (  ) : true or false*
 
 Determine whether Daylight Saving Time (DST) is in effect.
-
-
-*isLeapYear (  ) : true or false*
-
-Determines whether or not this instance is in a leap year. Returns true if this instance is in a leap year, else false.
 
 
 *isWeekday (  ) : true or false*
