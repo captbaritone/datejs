@@ -8,40 +8,36 @@
 
 *License:* Licensed under [http://www.datejs.com/license/ The MIT License].
 
-= Class Methods =
+= Public Methods =
 
-*getDayNumberFromName* ( dayName ) : dayNumber
+*Date.getDayNumberFromName* ( dayName ) : dayNumber
 
  Gets the day number (0-6) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated day name.
 
 
-*getDaysInMonth* ( year, month ) : number of days
+*Date.getDaysInMonth* ( year, month ) : number of days
 
  Gets the number of days in the month, given a year and month value. Automatically corrects for leap year.
 
 
-*getMonthNumberFromName* ( monthName ) : monthNumber
+*Date.getMonthNumberFromName* ( monthName ) : monthNumber
 
  Gets the month number (0-11) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated month name.
 
 
-*getTimeZoneAbbreviation* ( timezoneOffset, isDayLightSavingsTime ) : timezoneAbbreviation
+*Date.getTimeZoneAbbreviation* ( timezoneOffset, isDayLightSavingsTime ) : timezoneAbbreviation
 
  Returns a [CultureInfo culture-specific] timezone abbreviation based on a given offset and a boolean indicating whether daylight savings time is in effect.
 
 
-*getTimeZoneOffset* ( timezoneName, isDayLightSavingsTime ) : timezoneOffset
+*Date.getTimeZoneOffset* ( timezoneName, isDayLightSavingsTime ) : timezoneOffset
 
  Gets the timezone offset if given a [CultureInfo culture-specific] string which is a valid full or abbreviated timezone name and a boolean indicating whether daylight savings time is in effect.
 
 
-*isLeapYear* ( year ) : true or false
+*Date.isLeapYear* ( year ) : true or false
 
  Returns true if the given year is a leap year, false otherwise.
-
-
-
-= Instance Methods =
 
 *add* ( object ) : this
 
@@ -183,12 +179,12 @@
  Move to the next or previous month indicated by the monthNumber based on the pastOrFuture value - future (+1) or past (-1). Defaults to future. [Optional].
 
 
-*parse* ( dateString ) : date
+*Date.parse* ( dateString ) : date
 
  Converts the specified string value into its !JavaScript Date equivalent using [CultureInfo culture-specific] format information.
 
 
-*parseExact* ( dateString, formatStringOrArray ) : date
+*Date.parseExact* ( dateString, formatStringOrArray ) : date
 
  Converts the specified string value into its !JavaScript Date equivalent using the specified format (string) or formats (array). The format of the string value must match one of the supplied formats exactly.
 
@@ -213,36 +209,36 @@
  Converts the value of the current Date object to its equivalent string representation. Use format argument to specify format (optional). See FormatStrings for more info.
 
 
-*validateDay* ( day, year, monthNumber ) : true or false
+*Date.validateDay* ( day, year, monthNumber ) : true or false
 
  Validates the number is within an acceptable range for the days in a month [0-MaxDaysInMonth].
 
 
-*validateHour* ( hour ) : true or false
+*Date.validateHour* ( hour ) : true or false
 
  Validates the number is within an acceptable range for hours [0-23]. Returns true if within range, otherwise false.
 
 
-*validateMillisecond* ( milliseconds ) : true or false
+*Date.validateMillisecond* ( milliseconds ) : true or false
 
  Validates the number is within an acceptable range for milliseconds [0-999]. Returns true if within range, otherwise false.
 
 
-*validateMinute* ( minutes ) : true or false
+*Date.validateMinute* ( minutes ) : true or false
 
  Validates the number is within an acceptable range for minutes [0-59]. Returns true if within range, otherwise false.
 
 
-*validateMonth* ( month ) : true or false
+*Date.validateMonth* ( month ) : true or false
 
  Validates the number is within an acceptable range for months [0-11].
 
 
-*validateSecond* ( second ) : true or false
+*Date.validateSecond* ( second ) : true or false
 
  Validates the number is within an acceptable range for seconds [0-59]. Returns true if within range, otherwise false.
 
 
-*validateYear* ( year ) : true or false
+*Date.validateYear* ( year ) : true or false
 
  Validates the number is within an acceptable range for years [0-9999].
