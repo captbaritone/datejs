@@ -8,37 +8,37 @@
 
 = Class Methods =
 
-*Date.getDayNumberFromName*( `String` dayName ) : dayNumber
+*getDayNumberFromName ( dayName ) : dayNumber*
 
 Gets the day number (0-6) if given a (culture-specific) string which is a valid full or abbreviated day name.
 
 
 
-*Date.getDaysInMonth*( `Number` year, `Number` month ) : number of days
+*getDaysInMonth ( year, month ) : number of days*
 
 Gets the number of days in the month, given a year and month value. Automatically corrects for LeapYear.
 
 
 
-*Date.getMonthNumberFromName*( `String` monthName ) : monthNumber
+*getMonthNumberFromName ( monthName ) : monthNumber*
 
 Gets the month number (0-11) if given a (culture-specific) string which is a valid full or abbreviated month name.
 
 
 
-*Date.getTimeZoneAbbreviation*( timezoneOffset, isDayLightSavingsTime ) : timezoneAbbreviation
+*getTimeZoneAbbreviation ( timezoneOffset, isDayLightSavingsTime ) : timezoneAbbreviation*
 
 Returns a (culture-specific) timezone abbreviation based on a given offset and a boolean indicating whether daylight savings time is in effect.
 
 
 
-*Date.getTimeZoneOffset*( timezoneName, isDayLightSavingsTime ) : timezoneOffset
+*getTimeZoneOffset ( timezoneName, isDayLightSavingsTime ) : timezoneOffset*
 
 Gets the timezone offset if given a (culture-specific) string which is a valid full or abbreviated timezone name and a boolean indicating whether daylight savings time is in effect.
 
 
 
-*Date.isLeapyear*( `Number` year ) : true or false
+*isLeapyear ( year ) : true or false*
 
 Returns true if the given year is a leap year, false otherwise.
 
@@ -47,12 +47,12 @@ Returns true if the given year is a leap year, false otherwise.
 
 = Instance Methods =
 
-*add*( `Object` object ) : this
+*add ( object ) : this*
 
 Adds (or subtracts) to the value of the year, month, day, hour, minute, second, millisecond of the date instance using given configuration object. Positive and Negative values allowed.
 
 
-*addHours*( `Number` hours ) : this
+*addHours ( hours ) : this*
 
 Adds the specified number of hours to this instance given the number of hours to add. The number can be positive or negative.
 
@@ -113,9 +113,49 @@ Compares this instance to a Date object and return an number indication of their
 Compares this instance to another Date object and returns true if they are equal, false otherwise.
 
 
+*getDayName ( useAbbreviation ) : dayName*
+
+Gets the name of the day of the week. Set useAbbreviation to true to return the abbreviated name of the day of the week [optional].
+
+
+*getDayOfYear (  ) : dayNumberInYear*
+
+Get the numeric day number of the year, adjusted for leap year.
+
+
 *getDaysInMonth (  ) : true or false*
 
 Get the number of days in the current month, adjusted for leap year. Returns the number of days in the month.
+
+
+*getMonthName ( useAbbreviation ) : monthName*
+
+Gets the name of the month. Set useAbbreviation to true to return the abbreviated name of the month [optional].
+
+
+*getParseFunction ( formatStringOrArray ) : function*
+
+Returns a function that can be used to parse a string and return a date, given a format (string) or formats (string). The format of the string passed to the resulting function must match one of the supplied formats exactly or a parse exception will be thrown.
+
+
+*getTimezone (  ) : timezoneAbbreviation*
+
+Get the timezone abbreviation of the current date.
+
+
+*getUTCOffset (  ) : UTCOffset*
+
+Get the offset from UTC of the current date. Returns the 4-character offset string prefixed with + or - (e.g. "-0500").
+
+
+*getWeekOfYear ( firstDayOfWeek ) : weekNumberInYear*
+
+Get the week of the year for the current date instance. Takes an optional parameter for the firstDayOfWeek [0-6].
+
+
+*isDST (  ) : true or false*
+
+Determine whether Daylight Saving Time (DST) is in effect.
 
 
 *isLeapYear (  ) : true or false*
@@ -148,9 +188,34 @@ Moves the date to the last day of the month.
 Move to the next or previous month indicated by the monthNumber based on the pastOrFuture value - future (+1) or past (-1). Defaults to future. [Optional].
 
 
+*parse ( dateString ) : date*
+
+Converts the specified string value into its JavaScript Date equivalent using (culture-specific) format information.
+
+
+*parseExact ( dateString, formatStringOrArray ) : date*
+
+Converts the specified string value into its JavaScript Date equivalent using the specified format (string) or formats (array). The format of the string value must match one of the supplied formats exactly.
+
+
 *set ( object ) : this*
 
 Set the value of year, month, day, hour, minute, second, millisecond of date instance using given configuration object.
+
+
+*setTimezone ( timezoneAbbreviation ) : this*
+
+Set the timezone for the current date using a (culture-specific) timezone abbreviation (ex: 'PST'). Note that in most JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
+
+
+*setTimezoneOffset ( timezoneOffset ) : this*
+
+Set the timezone for the current date using an offset (ex: '-0700'). Note that in most JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
+
+
+*toString ( format ) : formattedDateString*
+
+Converts the value of the current Date object to its equivalent string representation. Use format argument to specify format [optional]. See FormatStrings for more info.
 
 
 *validateDay ( day, year, monthNumber ) : true or false*
@@ -186,3 +251,5 @@ Validates the number is within an acceptable range for seconds [0-59]. Returns t
 *validateYear ( year ) : true or false*
 
 Validates the number is within an acceptable range for years [0-9999].
+
+
