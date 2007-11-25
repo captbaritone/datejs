@@ -3,6 +3,20 @@
 
 = Public Methods =
 
+*Date.now* () : `Date`
+
+ Gets a date that is set to the current date and time.
+{{{
+Date.now(); // Equivalent to new Date().
+}}}
+
+*Date.today* () : `Date`
+
+ Gets a date that is set to the current date. The time is set to the start of the day (00:00 or 12:00 AM).
+{{{
+Date.today(); // Equivalent to Date.now().clearTime()
+}}}
+
 *Date.getDayNumberFromName* ( `String` dayName ) : `Number`
 
  Gets the day number (0-6) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated day name.
