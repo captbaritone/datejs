@@ -1,4 +1,5 @@
 #summary Date class and instance methods provided by the DateJS library.
+#labels Featured
 
 = Public Methods =
 
