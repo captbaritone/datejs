@@ -1,4 +1,4 @@
-#summary Format strings are used to specify date formats for display and input.
+#summary Format Specifiers are used to specify date formats for display and input.
 
 {{{
 Format  Description                                                                  Example
