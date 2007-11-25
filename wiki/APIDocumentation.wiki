@@ -362,7 +362,7 @@ Date.today().set({ day: 15, hour: 8 }); // Sets the day to the 15th day of the c
 
 *toString* ( `String` format ) : `String`
 
- Converts the value of the current Date object to its equivalent string representation. Use format argument to specify format (optional). See FormatStrings for more info.
+ Converts the value of the current Date object to its equivalent string representation. Use format argument to specify format (optional). See FormatSpecifiers for more info.
 {{{
 Date.today().toString();           // native .toString() functionality
 Date.today().toString("M/d/yyyy"); // 19-Nov-2007
