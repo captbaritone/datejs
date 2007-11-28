@@ -3,18 +3,11 @@
 
 = Public Methods =
 
-*Date.now* () : `Date`
-
- Gets a date that is set to the current date and time.
-{{{
-Date.now(); // Equivalent to new Date().
-}}}
-
 *Date.today* () : `Date`
 
  Gets a date that is set to the current date. The time is set to the start of the day (00:00 or 12:00 AM).
 {{{
-Date.today(); // Equivalent to Date.now().clearTime()
+Date.today(); // Equivalent to new Date().clearTime()
 }}}
 
 *Date.getDayNumberFromName* ( `String` dayName ) : `Number`
@@ -162,8 +155,7 @@ Date.today().between(past, future); // true|false
 
  Resets the time of this Date object to 12:00 AM (00:00), which is the start of the day.
 {{{
-new Date().clearTime();
-Date.now().clearTime(); // same as Date.today()
+new Date().clearTime(); // same as Date.today()
 }}}
 
 
@@ -279,7 +271,7 @@ Date.today().getWeekOfYear(); // 46
 
  Determine whether Daylight Saving Time (DST) is in effect.
 {{{
-Date.now().isDST(); // true|false
+Date.today().isDST(); // true|false
 }}}
 
 
@@ -380,7 +372,7 @@ Date.today().set({ day: 15, hour: 8 }); // Sets the day to the 15th day of the c
 {{{
 Date.today().toString();           // native .toString() functionality
 Date.today().toString("M/d/yyyy"); // 19-Nov-2007
-Date.now().toString("HH:mm");      // 18:45
+new Date().toString("HH:mm");      // 18:45
 }}}
 
 
