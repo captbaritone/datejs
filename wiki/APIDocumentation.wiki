@@ -299,19 +299,19 @@ Date.today().isWeekday(); // true|false
 }}}
 
 
-*moveToFirstDayOfTheMonth* (  ) : `Date`
+*moveToFirstDayOfMonth* (  ) : `Date`
 
  Moves the date to the first day of the month.
 {{{
-new Date(2007, 10, 19).moveToFirstDayOfTheMonth(); // 1-Nov-2007
+new Date(2007, 10, 19).moveToFirstDayOfMonth(); // 1-Nov-2007
 }}}
 
 
-*moveToLastDayOfTheMonth* (  ) : `Date`
+*moveToLastDayOfMonth* (  ) : `Date`
 
  Moves the date to the last day of the month.
 {{{
-new Date(2007, 10, 19).moveToLastDayOfTheMonth(); // 30-Nov-2007
+new Date(2007, 10, 19).moveToLastDayOfMonth(); // 30-Nov-2007
 }}}
 
 
