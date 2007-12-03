@@ -37,14 +37,14 @@ Date.getMonthNumberFromName('feb');  // 1
 }}}
 
 
-*Date.getTimeZoneAbbreviation* ( `Number` timezoneOffset, `Boolean` isDayLightSavingsTime ) : `String`
+*Date.getTimezoneAbbreviation* ( `Number` timezoneOffset, `Boolean` isDayLightSavingsTime ) : `String`
 
  Returns a [CultureInfo culture-specific] timezone abbreviation based on a given offset and a boolean indicating whether daylight savings time is in effect.
 {{{
 }}}
 
 
-*Date.getTimeZoneOffset* ( `String` timezoneName, `Boolean` isDayLightSavingsTime ) : `Number`
+*Date.getTimezoneOffset* ( `String` timezoneName, `Boolean` isDayLightSavingsTime ) : `Number`
 
  Gets the timezone offset if given a [CultureInfo culture-specific] string which is a valid full or abbreviated timezone name and a boolean indicating whether daylight savings time is in effect.
 {{{
