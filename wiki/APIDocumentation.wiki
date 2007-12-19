@@ -183,14 +183,14 @@ console.log(d2); // 7-Jan-2007
 
 *compareTo* ( `Date` date ) : `Number`
 
- Compares this instance to a Date object and return an number indication of their relative values. 1 = this is greater than date, -1 = this is less than date, 0 = values are equal.
+ Compares this instance to a Date object and return an number indication of their relative values. -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
 {{{
 var past = Date.today().add(-6).days();
 var future = Date.today().add(6).days();
 
-Date.today().compareTo(past);                   // 1
-Date.today().compareTo(new Date().clearTime()); // 0
 Date.today().compareTo(future);                 // -1
+Date.today().compareTo(new Date().clearTime()); // 0
+Date.today().compareTo(past);                   // 1
 }}}
 
 
