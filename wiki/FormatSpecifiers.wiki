@@ -3,17 +3,17 @@
 {{{
 Format  Description                                                                  Example
 ------  ---------------------------------------------------------------------------  -----------------------
- s      The seconds of the minute between 1-59.                                      "1" to "59"
- ss     The seconds of the minute with leading zero if required.                     "01" to "59"
+ s      The seconds of the minute between 0-59.                                      "0" to "59"
+ ss     The seconds of the minute with leading zero if required.                     "00" to "59"
  
- m      The minute of the hour between 0-59.                                         "1"  or "59"
- mm     The minute of the hour with leading zero if required.                        "01" or "59"
+ m      The minute of the hour between 0-59.                                         "0"  or "59"
+ mm     The minute of the hour with leading zero if required.                        "00" or "59"
  
  h      The hour of the day between 1-12.                                            "1"  to "12"
  hh     The hour of the day with leading zero if required.                           "01" to "12"
  
- H      The hour of the day between 1-23.                                            "1"  to "23"
- HH     The hour of the day with leading zero if required.                           "01" to "23"
+ H      The hour of the day between 0-23.                                            "0"  to "23"
+ HH     The hour of the day with leading zero if required.                           "00" to "23"
  
  d      The day of the month between 1 and 31.                                       "1"  to "31"
  dd     The day of the month with leading zero if required.                          "01" to "31"
