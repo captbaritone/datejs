@@ -268,31 +268,6 @@ Date.today().getWeekOfYear(); // 46
 }}}
 
 
-*isDST* (  ) : `Boolean`
-
- Determine whether Daylight Saving Time (DST) is in effect.
-{{{
-Date.today().isDST(); // true|false
-}}}
-
-
-*isLeapYear* (  ) : `Boolean`
-
- Determines whether or not this instance is in a leap year. Returns true if this instance is in a leap year, else false.
-{{{
-new Date(2007, 5, 5).isLeapYear();  // false;
-new Date(2008, 1, 15).isLeapYear(); // true 
-}}}
-
-
-*isWeekday* (  ) : `Boolean`
-
- Determines whether or not this instance is a weekday. Returns true if this instance is a weekday, false otherwise.
-{{{
-Date.today().isWeekday(); // true|false
-}}}
-
-
 *moveToDayOfWeek* ( `Number` dayOfWeek, `Number` pastOrFuture ) : `Date`
 
  Move to the next or last dayOfWeek based on the pastOrFuture value - future (+1) or past (-1). Defaults to future. [Optional].
