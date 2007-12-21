@@ -270,7 +270,8 @@ Date.today().getWeekOfYear(); // 46
  Move to the next or previous dayOfWeek. Whether to move into the future (+1) or past (-1) is controlled by the optional direction parameter.
 {{{
 Date.today().moveToDayOfWeek(0);     // move to next Sunday
-Date.today().moveToDayOfWeek(0, -1); // move to last Sunday}}}
+Date.today().moveToDayOfWeek(0, -1); // move to last Sunday
+}}}
 
 
 *moveToFirstDayOfMonth* (  ) : `Date`
