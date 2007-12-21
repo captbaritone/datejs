@@ -10,6 +10,20 @@
 Date.today(); // Equivalent to new Date().clearTime()
 }}}
 
+
+*getDayName* ( `Number` dayOfWeek ) : `String`
+
+ Gets the name of the day of the week. Value returned from [CultureInfo culture-specific] object.
+{{{
+Date.getDayName(0);  // Sunday
+Date.getDayName(5);  // Friday
+
+// Using a dayOfWeek Constant to get the [CultureInfo culture-specific] day name
+Date.getDayName(Date.SUNDAY); // "Sunday"
+Date.getDayName(Date.FRIDAY); // "Friday"
+}}}
+
+
 *Date.getDayNumberFromName* ( `String` dayName ) : `Number`
 
  Gets the day number (0-6) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated day name.
@@ -25,6 +39,19 @@ Date.getDayNumberFromName('sat');     // 6
 {{{
 Date.getDaysInMonth(2008, 1);  // 29
 Date.getDaysInMonth(2007, 10); // 30
+}}}
+
+
+*Date.getMonthName* ( `Number` month ) : `String`
+
+ Gets the name of the month. Value returned from the [CultureInfo culture-specific] file. 
+{{{
+Date.getMonthName(0);  // "January"
+Date.getMonthName(10); // "November"
+
+// Using a dayOfWeek Constant to get the [CultureInfo culture-specific] day name
+Date.getMonthName(Date.JANUARY); // "January"
+Date.getMonthName(Date.OCTOBER); // "October"
 }}}
 
 
@@ -203,39 +230,12 @@ Date.today().compareTo(new Date().clearTime()); // true
 }}}
 
 
-*getDayName* ( `Boolean` useAbbreviation ) : `String`
-
- Gets the name of the day of the week. Set useAbbreviation to true to return the abbreviated name of the day of the week (optional).
-{{{
-Date.today().getDayName();     // Tuesday
-Date.today().getDayName(true); // Tue
-}}}
-
-
 *getDayOfYear* (  ) : `Number`
 
  Get the numeric day number of the year, adjusted for leap year.
 {{{
 Date.today().getDayOfYear();         // 323
 new Date(2000, 0, 1).getDayOfYear(); // 1
-}}}
-
-
-*getDaysInMonth* (  ) : `Boolean`
-
- Get the number of days in the current month, adjusted for leap year. Returns the number of days in the month.
-{{{
-Date.today().getDaysInMonth(); // 30
-new Date(2008, 1, 15);         // 29
-}}}
-
-
-*getMonthName* ( `Boolean` useAbbreviation ) : `String`
-
- Gets the name of the month. Set useAbbreviation to true to return the abbreviated name of the month (optional).
-{{{
-Date.today().getMonthName();     // November
-Date.today().getMonthName(true); // Nov
 }}}
 
 
