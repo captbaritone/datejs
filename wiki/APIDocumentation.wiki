@@ -18,7 +18,7 @@ Date.today(); // Equivalent to new Date().clearTime()
 Date.getDayName(0);  // Sunday
 Date.getDayName(5);  // Friday
 
-// Using a dayOfWeek Constant to get the [CultureInfo culture-specific] day name
+// Using a dayOfWeek Constant to get the culture-specific day name
 Date.getDayName(Date.SUNDAY); // "Sunday"
 Date.getDayName(Date.FRIDAY); // "Friday"
 }}}
@@ -49,7 +49,7 @@ Date.getDaysInMonth(2007, 10); // 30
 Date.getMonthName(0);  // "January"
 Date.getMonthName(10); // "November"
 
-// Using a dayOfWeek Constant to get the [CultureInfo culture-specific] day name
+// Using a dayOfWeek Constant to get the culture-specific day name
 Date.getMonthName(Date.JANUARY); // "January"
 Date.getMonthName(Date.OCTOBER); // "October"
 }}}
@@ -192,7 +192,7 @@ new Date().clearTime(); // same as Date.today()
  Returns a new Date object that is an exact date and time copy of the original instance.
 {{{
 // Wrong way
-var d1 = new Date(2007, 0, 1);
+var d1 = new Date(2007, 0, 1); // 1-Jan-2007
 var d2 = d1;
 d2.add(6).days(); 
 
@@ -200,7 +200,7 @@ console.log(d1); // 7-Jan-2007
 console.log(d2); // 7-Jan-2007
 
 // Correct way
-var d1 = new Date(2007, 0, 1);
+var d1 = new Date(2007, 0, 1); // 1-Jan-2007
 var d2 = d1.clone();
 d2.add(6).days(); 
 
@@ -227,6 +227,10 @@ Date.today().compareTo(past);                   // 1
  Compares this instance to another Date object and returns true if they are equal, false otherwise.
 {{{
 Date.today().compareTo(new Date().clearTime()); // true
+
+var d1 = Date.today();
+var d2 = Date.today().addHours(5);
+d1.equals(d2); // false
 }}}
 
 
@@ -236,13 +240,6 @@ Date.today().compareTo(new Date().clearTime()); // true
 {{{
 Date.today().getDayOfYear();         // 323
 new Date(2000, 0, 1).getDayOfYear(); // 1
-}}}
-
-
-*getParseFunction* ( `String` formatStringOrArray ) : `Function`
-
- Returns a function that can be used to parse a string and return a date, given a format (string) or formats (string). The format of the string passed to the resulting function must match one of the supplied formats exactly or a parse exception will be thrown.
-{{{
 }}}
 
 
@@ -268,11 +265,12 @@ Date.today().getWeekOfYear(); // 46
 }}}
 
 
-*moveToDayOfWeek* ( `Number` dayOfWeek, `Number` pastOrFuture ) : `Date`
+*moveToDayOfWeek* ( `Number` dayOfWeek, `Number` direction ) : `Date`
 
- Move to the next or last dayOfWeek based on the pastOrFuture value - future (+1) or past (-1). Defaults to future. [Optional].
+ Move to the next or previous dayOfWeek. Whether to move into the future (+1) or past (-1) is controlled by the optional direction parameter.
 {{{
-}}}
+Date.today().moveToDayOfWeek(0);     // move to next Sunday
+Date.today().moveToDayOfWeek(0, -1); // move to last Sunday}}}
 
 
 *moveToFirstDayOfMonth* (  ) : `Date`
@@ -291,10 +289,12 @@ new Date(2007, 10, 19).moveToLastDayOfMonth(); // 30-Nov-2007
 }}}
 
 
-*moveToMonth* ( `Number` monthNumber, `Number` pastOrFuture ) : `Date`
+*moveToMonth* ( `Number` month, `Number` direction ) : `Date`
 
- Move to the next or previous month indicated by the monthNumber based on the pastOrFuture value - future (+1) or past (-1). Defaults to future. [Optional].
+ Move to the next or previous month. Whether to move into the future (+1) or past (-1) is controlled by the optional direction parameter.
 {{{
+Date.today().moveToMonth(0);     // move to next January
+Date.today().moveToMonth(0, -1); // move to last January
 }}}
 
 
@@ -356,7 +356,8 @@ new Date().toString("HH:mm");      // 18:45
 
  Validates the number is within an acceptable range for the days in a month [0-MaxDaysInMonth].
 {{{
-Date.validateDay(31, 2007, 10); // false
+Date.validateDay(15, 2007, 1);  // true, 15-Feb-2007
+Date.validateDay(31, 2007, 10); // false, throws RangeError exception
 }}}
 
 
@@ -365,6 +366,7 @@ Date.validateDay(31, 2007, 10); // false
  Validates the number is within an acceptable range for hours [0-23]. Returns true if within range, otherwise false.
 {{{
 Date.validateHour(15); // true
+Date.validateHour(24); // false, throws RangeError exception
 }}}
 
 
@@ -381,6 +383,7 @@ Date.validateMillisecond(500); // true
  Validates the number is within an acceptable range for minutes [0-59]. Returns true if within range, otherwise false.
 {{{
 Date.validateMinute(45); // true
+Date.validateMinute(60); // false, throws RangeError exception
 }}}
 
 
@@ -388,7 +391,8 @@ Date.validateMinute(45); // true
 
  Validates the number is within an acceptable range for months [0-11].
 {{{
-Date.validateMonth(12); // false
+Date.validateMonth(0);  // true, "January"
+Date.validateMonth(12); // false, throws RangeError exception
 }}}
 
 
@@ -397,6 +401,7 @@ Date.validateMonth(12); // false
  Validates the number is within an acceptable range for seconds [0-59]. Returns true if within range, otherwise false.
 {{{
 Date.validateSecond(15); // true
+Date.validateSecond(60); // false, throws RangeError exception
 }}}
 
 
