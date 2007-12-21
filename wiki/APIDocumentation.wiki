@@ -55,8 +55,9 @@ Date.getMonthNumberFromName('feb');  // 1
 
  Returns true if the given year is a leap year, false otherwise.
 {{{
-Date.today().isLeapYear();        // true|false
-new Date(2008,1,29).isLeapYear(); // true|false
+Date.isLeapYear(Date.today().getFullYear()); // true|false
+var date = new Date(2008,1,29);
+Date.isLeapYear(date.getFullYear);           // true
 }}}
 
 
