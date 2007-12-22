@@ -1,7 +1,7 @@
 #summary Date class and instance methods provided by the DateJS library.
 #labels Featured
 
-= Public Methods =
+= Public Static Methods =
 
 *Date.today* () : `Date`
 
@@ -87,6 +87,7 @@ var date = new Date(2008,1,29);
 Date.isLeapYear(date.getFullYear);           // true
 }}}
 
+= Public Instance Methods =
 
 *add* ( `Object` object ) : `Date`
 
