@@ -11,16 +11,35 @@ Date.today(); // Equivalent to new Date().clearTime()
 }}}
 
 
-*getDayName* ( `Number` dayOfWeek ) : `String`
+*Date.compare* ( `Date` date1, `Date` date2 ) : `Number`
 
- Gets the name of the day of the week. Value returned from [CultureInfo culture-specific] object.
+ Compares the first date to the second date and returns an number indication of their relative values. -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
 {{{
-Date.getDayName(0);  // Sunday
-Date.getDayName(5);  // Friday
+var today = Date.today();
+var past = Date.today().add(-6).days();
+var future = Date.today().add(6).days();
 
-// Using a dayOfWeek Constant to get the culture-specific day name
-Date.getDayName(Date.SUNDAY); // "Sunday"
-Date.getDayName(Date.FRIDAY); // "Friday"
+
+Date.compare(today, future);                    // -1
+Date.compare(today, new Date().clearTime());    // 0
+Date.compare(today, past)                       // 1
+}}}
+
+
+*Date.equals* ( `Date` date1, `Date` date2 ) : `Boolean`
+
+ Compares the first Date object to the second Date object and returns true if they are equal.
+{{{
+Date.equals(Date.today(), new Date().clearTime());   // true
+
+var d1 = Date.today();
+var d2 = Date.today().addHours(5);
+var d3 = new Date().clearTime();
+var d4 = "foo";
+
+Date.equals(d1, d2);  // false
+Date.equals(d1, d3);  // true
+Date.equals(d1, d4);  // throws exception
 }}}
 
 
@@ -39,19 +58,6 @@ Date.getDayNumberFromName('sat');     // 6
 {{{
 Date.getDaysInMonth(2008, 1);  // 29
 Date.getDaysInMonth(2007, 10); // 30
-}}}
-
-
-*Date.getMonthName* ( `Number` month ) : `String`
-
- Gets the name of the month. Value returned from the [CultureInfo culture-specific] file. 
-{{{
-Date.getMonthName(0);  // "January"
-Date.getMonthName(10); // "November"
-
-// Using a dayOfWeek Constant to get the culture-specific day name
-Date.getMonthName(Date.JANUARY); // "January"
-Date.getMonthName(Date.OCTOBER); // "October"
 }}}
 
 
