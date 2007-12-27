@@ -93,6 +93,89 @@ var date = new Date(2008,1,29);
 Date.isLeapYear(date.getFullYear);           // true
 }}}
 
+
+*Date.parse* ( `String` dateString ) : `Date`
+
+ Converts the specified string value into its !JavaScript Date equivalent using [CultureInfo culture-specific] format information.
+{{{
+Date.parse("today")
+Date.parse("t + 5 d") // today + 5 days
+Date.parse("next thursday")
+Date.parse("February 20th 1973″)
+Date.parse("Thu, 1 July 2004 22:30:00″)
+}}}
+
+
+*Date.parseExact* ( `String` dateString, `String` formatStringOrArray ) : `Date`
+
+ Converts the specified string value into its !JavaScript Date equivalent using the specified format (string) or formats (array). The format of the string value must match one of the supplied formats exactly.
+{{{
+Date.parseExact("6/15/2007", "M/d/yyyy");
+Date.parseExact("15-Nov-2007", "d-MMM-yyyy");
+Date.parseExact("4:15 PM", "h:mm tt");
+}}}
+
+
+*Date.validateDay* ( `Number` day, `Number` year, `Number` monthNumber ) : `Boolean`
+
+ Validates the number is within an acceptable range for the days in a month [0-MaxDaysInMonth].
+{{{
+Date.validateDay(15, 2007, 1);  // true, 15-Feb-2007
+Date.validateDay(31, 2007, 10); // false, throws RangeError exception
+}}}
+
+
+*Date.validateHour* ( `Number` hour ) : `Boolean`
+
+ Validates the number is within an acceptable range for hours [0-23]. Returns true if within range, otherwise false.
+{{{
+Date.validateHour(15); // true
+Date.validateHour(24); // false, throws RangeError exception
+}}}
+
+
+*Date.validateMillisecond* ( `Number` milliseconds ) : `Boolean`
+
+ Validates the number is within an acceptable range for milliseconds [0-999]. Returns true if within range, otherwise false.
+{{{
+Date.validateMillisecond(500); // true
+}}}
+
+
+*Date.validateMinute* ( `Number` minutes ) : `Boolean`
+
+ Validates the number is within an acceptable range for minutes [0-59]. Returns true if within range, otherwise false.
+{{{
+Date.validateMinute(45); // true
+Date.validateMinute(60); // false, throws RangeError exception
+}}}
+
+
+*Date.validateMonth* ( `Number` month ) : `Boolean`
+
+ Validates the number is within an acceptable range for months [0-11].
+{{{
+Date.validateMonth(0);  // true, "January"
+Date.validateMonth(12); // false, throws RangeError exception
+}}}
+
+
+*Date.validateSecond* ( `Number` second ) : `Boolean`
+
+ Validates the number is within an acceptable range for seconds [0-59]. Returns true if within range, otherwise false.
+{{{
+Date.validateSecond(15); // true
+Date.validateSecond(60); // false, throws RangeError exception
+}}}
+
+
+*Date.validateYear* ( `Number` year ) : `Boolean`
+
+ Validates the number is within an acceptable range for years [0-9999].
+{{{
+Date.validateYear(2007); // true
+}}}
+
 = Public Instance Methods =
 
 *add* ( `Object` object ) : `Date`
@@ -272,6 +355,22 @@ Date.today().getWeekOfYear(); // 46
 }}}
 
 
+*hasDaylightSavingTime* ( ) : `Boolean`
+
+ Indicates whether Daylight Saving Time is observed in the current time zone.
+{{{
+Date.today().hasDaylightSavingTime(); // true|false
+}}}
+
+
+*isDaylightSavingTime* ( ) : `Boolean`
+
+ Indicates whether this Date instance is within the Daylight Saving Time range for the current time zone.
+{{{
+Date.today().isDaylightSavingTime(); // true|false
+}}}
+
+
 *moveToDayOfWeek* ( `Number` dayOfWeek, `Number` direction ) : `Date`
 
  Move to the next or previous dayOfWeek. Whether to move into the future (+1) or past (-1) is controlled by the optional direction parameter.
@@ -306,28 +405,6 @@ Date.today().moveToMonth(0, -1); // move to last January
 }}}
 
 
-*Date.parse* ( `String` dateString ) : `Date`
-
- Converts the specified string value into its !JavaScript Date equivalent using [CultureInfo culture-specific] format information.
-{{{
-Date.parse("today")
-Date.parse("t + 5 d") // today + 5 days
-Date.parse("next thursday")
-Date.parse("February 20th 1973″)
-Date.parse("Thu, 1 July 2004 22:30:00″)
-}}}
-
-
-*Date.parseExact* ( `String` dateString, `String` formatStringOrArray ) : `Date`
-
- Converts the specified string value into its !JavaScript Date equivalent using the specified format (string) or formats (array). The format of the string value must match one of the supplied formats exactly.
-{{{
-Date.parseExact("6/15/2007", "M/d/yyyy");
-Date.parseExact("15-Nov-2007", "d-MMM-yyyy");
-Date.parseExact("4:15 PM", "h:mm tt");
-}}}
-
-
 *set* ( `Object` object ) : `Date`
 
  Set the value of year, month, day, hour, minute, second, millisecond of date instance using given configuration object.
@@ -357,65 +434,4 @@ Date.today().set({ day: 15, hour: 8 }); // Sets the day to the 15th day of the c
 Date.today().toString();           // native .toString() functionality
 Date.today().toString("M/d/yyyy"); // 19-Nov-2007
 new Date().toString("HH:mm");      // 18:45
-}}}
-
-
-*Date.validateDay* ( `Number` day, `Number` year, `Number` monthNumber ) : `Boolean`
-
- Validates the number is within an acceptable range for the days in a month [0-MaxDaysInMonth].
-{{{
-Date.validateDay(15, 2007, 1);  // true, 15-Feb-2007
-Date.validateDay(31, 2007, 10); // false, throws RangeError exception
-}}}
-
-
-*Date.validateHour* ( `Number` hour ) : `Boolean`
-
- Validates the number is within an acceptable range for hours [0-23]. Returns true if within range, otherwise false.
-{{{
-Date.validateHour(15); // true
-Date.validateHour(24); // false, throws RangeError exception
-}}}
-
-
-*Date.validateMillisecond* ( `Number` milliseconds ) : `Boolean`
-
- Validates the number is within an acceptable range for milliseconds [0-999]. Returns true if within range, otherwise false.
-{{{
-Date.validateMillisecond(500); // true
-}}}
-
-
-*Date.validateMinute* ( `Number` minutes ) : `Boolean`
-
- Validates the number is within an acceptable range for minutes [0-59]. Returns true if within range, otherwise false.
-{{{
-Date.validateMinute(45); // true
-Date.validateMinute(60); // false, throws RangeError exception
-}}}
-
-
-*Date.validateMonth* ( `Number` month ) : `Boolean`
-
- Validates the number is within an acceptable range for months [0-11].
-{{{
-Date.validateMonth(0);  // true, "January"
-Date.validateMonth(12); // false, throws RangeError exception
-}}}
-
-
-*Date.validateSecond* ( `Number` second ) : `Boolean`
-
- Validates the number is within an acceptable range for seconds [0-59]. Returns true if within range, otherwise false.
-{{{
-Date.validateSecond(15); // true
-Date.validateSecond(60); // false, throws RangeError exception
-}}}
-
-
-*Date.validateYear* ( `Number` year ) : `Boolean`
-
- Validates the number is within an acceptable range for years [0-9999].
-{{{
-Date.validateYear(2007); // true
 }}}
