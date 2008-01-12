@@ -411,6 +411,22 @@ Date.today().moveToMonth(0, -1); // move to last January
 {{{
 Date.today().set({ day: 15, hour: 8 }); // Sets the day to the 15th day of the current month and the hour to 8 (AM).
 }}}
+ The following details all the options for .set().
+{{{
+// returns Jul 15 2008 18:45:30
+Date.today().set({
+    millisecond: 500,
+    second: 30,
+    minute: 45,
+    hour: 18,
+    day: 15,
+    month: 6,
+    year: 2008
+    });
+
+// as one line
+Date.today().set({millisecond: 500, second: 30, minute: 45, hour: 18, day: 15, month: 6, year: 2008});
+}}}
 
 
 *setTimezone* ( `String` timezoneAbbreviation ) : `Date`
