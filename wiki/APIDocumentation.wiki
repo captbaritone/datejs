@@ -201,7 +201,7 @@ Date.today().add({
 // as one line
 Date.today().add({milliseconds: 500, seconds: 30, minutes: 45, hours: 18, days: 15, months: 6, years: 1});
 }}}
- *Note* The singular or plural form of the date part are accepted in .add. 
+ The singular or plural form of the date part are accepted in .add. 
 {{{
 // Adds 45 minutes, 1 hour and 1 day to Today.
 Date.today().add({
