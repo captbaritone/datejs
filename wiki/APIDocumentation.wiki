@@ -185,6 +185,31 @@ Date.validateYear(2007); // true
 Date.today().add({ days: 5, months: 1 });
 new Date().add({ years: -1, hours: -6 });
 }}}
+ The following details all the options for .add().
+{{{
+// returns Jul 26 2009 18:45:30 given today as 11-Jan-2008
+Date.today().add({
+    milliseconds: 500,
+    seconds: 30,
+    minutes: 45,
+    hours: 18,
+    days: 15,
+    months: 6,
+    years: 1
+    });
+
+// as one line
+Date.today().add({milliseconds: 500, seconds: 30, minutes: 45, hours: 18, days: 15, months: 6, years: 1});
+}}}
+ *Note* The singular or plural form of the date part are accepted in .add. 
+{{{
+// Adds 45 minutes, 1 hour and 1 day to Today.
+Date.today().add({
+    minutes: 45,
+    hour: 1,
+    day: 1
+    });
+}}}
 
 
 *addMilliseconds* ( `Number` milliseconds ) : `Date`
