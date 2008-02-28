@@ -197,7 +197,7 @@ Date.today().add({
     months: 6,
     years: 1
     });
-
+ 
 // as one line
 Date.today().add({milliseconds: 500, seconds: 30, minutes: 45, hours: 18, days: 15, months: 6, years: 1});
 }}}
@@ -277,7 +277,7 @@ Date.today().addYears(-10);
 
 *between* ( `Date` startDate, `Date` endDate ) : `Boolean`
 
- Determines is this instance is between a range of two dates or equal to either the start or end dates.
+ Determines if this instance is between a range of two dates or equal to either the start or end dates.
 {{{
 var past = new Date(2000, 4, 5);
 var future = new Date(2010, 11, 25)
@@ -304,7 +304,7 @@ d2.add(6).days();
 
 console.log(d1); // 7-Jan-2007
 console.log(d2); // 7-Jan-2007
-
+ 
 // Correct way
 var d1 = new Date(2007, 0, 1); // 1-Jan-2007
 var d2 = d1.clone();
@@ -330,7 +330,7 @@ Date.today().compareTo(past);                   // 1
 
 *equals* ( `Date` date ) : `Boolean`
 
- Compares this instance to another Date object and returns true if they are equal, false otherwise.
+ Compares this instance to another Date object and returns true if they are equal, otherwise false.
 {{{
 Date.today().compareTo(new Date().clearTime()); // true
 
@@ -439,7 +439,7 @@ Date.today().set({
     month: 6,
     year: 2008
     });
-
+ 
 // as one line
 Date.today().set({millisecond: 500, second: 30, minute: 45, hour: 18, day: 15, month: 6, year: 2008});
 }}}
