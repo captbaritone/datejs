@@ -200,6 +200,10 @@ Date.today().add({
  
 // as one line
 Date.today().add({milliseconds: 500, seconds: 30, minutes: 45, hours: 18, days: 15, months: 6, years: 1});
+
+// as separate config object
+var config = {milliseconds: 500, seconds: 30, minutes: 45, hours: 18, days: 15, months: 6, years: 1};
+Date.today().add(config);
 }}}
 
 
@@ -442,6 +446,10 @@ Date.today().set({
  
 // as one line
 Date.today().set({millisecond: 500, second: 30, minute: 45, hour: 18, day: 15, month: 6, year: 2008});
+
+// as separate config object
+var config = {millisecond: 500, second: 30, minute: 45, hour: 18, day: 15, month: 6, year: 2008};
+Date.today().set(config);
 }}}
 
 
