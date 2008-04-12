@@ -32,6 +32,8 @@ Format  Description                                                             
         Date.CultureInfo.amDesignator or Date.CultureInfo.pmDesignator
  tt     Displays the A.M./P.M. designator.                                           "AM" or "PM"
         Date.CultureInfo.amDesignator or Date.CultureInfo.pmDesignator
+
  fff    The milliseconds between 000-999                                             "000" to "999"
+
  S      The ordinal suffix ("st, "nd", "rd" or "th") of the current day              "st, "nd", "rd" or "th"
 }}}
