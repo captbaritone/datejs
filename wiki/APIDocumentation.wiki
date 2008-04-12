@@ -344,9 +344,9 @@ d1.equals(d2); // false
 }}}
 
 
-*getDayOfYear* (  ) : `Number`
+*getOrdinalNumber* (  ) : `Number`
 
- Get the numeric day number of the year, adjusted for leap year.
+ Get the Ordinal day (numeric day number) of the year, adjusted for leap year. Returns 1 through 365 (366 in leap years).
 {{{
 Date.today().getDayOfYear();         // 323
 new Date(2000, 0, 1).getDayOfYear(); // 1
