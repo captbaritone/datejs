@@ -1,7 +1,7 @@
 #summary Format Specifiers are used to specify date formats for display and input.
 #labels Featured
 
-=.toString( `String` format )=
+= .toString( `String` format ) =
 == CUSTOM DATE AND TIME FORMAT SPECIFIERS ==
 
 The following format specifiers are used with the `.toString(format)` function. 
@@ -40,9 +40,12 @@ Format  Description                                                             
         $C.amDesignator or $C.pmDesignator
  
  S      The ordinal suffix ("st, "nd", "rd" or "th") of the current day.            "st, "nd", "rd" or "th"
+}}}
 
+= .toString( `String` format ) =
+== STANDARD DATE AND TIME FORMAT SPECIFIERS ==
 
-STANDARD DATE AND TIME FORMAT SPECIFIERS
+{{{
 Format  Description                                                                  Example ("en-US")
 ------  ---------------------------------------------------------------------------  -----------------------
  d      The CultureInfo shortDate Format Pattern                                     "M/d/yyyy"
@@ -55,9 +58,10 @@ Format  Description                                                             
  T      The CultureInfo longTime Format Pattern                                      "h:mm:ss tt"
  u      The CultureInfo universalSortableDateTime Format Pattern                     "yyyy-MM-dd HH:mm:ssZ"
  y      The CultureInfo yearMonth Format Pattern                                     "MMMM, yyyy"
+}}} 
  
  
-=.format( `String` format )=
+= .format( `String` format ) =
 == FORMAT SPECIFIERS ==
 
 The following format specifiers are used with the `.format(format)` or `.$format(format)` function available by including the `extras.js` module. 
@@ -65,6 +69,7 @@ The following format specifiers are used with the `.format(format)` or `.$format
 The following descriptions are from http://www.php.net/strftime and http://www.php.net/manual/en/function.date.php. 
 Copyright © 2001-2008 The PHP Group
 
+{{{
 Format  Description                                                                  Example
 ------  ---------------------------------------------------------------------------  -----------------------
  %a     abbreviated weekday name according to the current localed                    "Mon" through "Sun"
