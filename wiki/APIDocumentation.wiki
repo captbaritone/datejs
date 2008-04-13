@@ -1,4 +1,4 @@
-#summary Date class and instance methods provided by the DateJS library.
+#summary Date class and instance methods provided by the Datejs library.
 #labels Featured
 
 = Public Static Methods =
@@ -6,6 +6,8 @@
 *Date.today* () : `Date`
 
  Gets a date that is set to the current date. The time is set to the start of the day (00:00 or 12:00 AM).
+ 
+ @return {Date}    The current date.
 {{{
 Date.today(); // Equivalent to new Date().clearTime()
 }}}
@@ -14,6 +16,10 @@ Date.today(); // Equivalent to new Date().clearTime()
 *Date.compare* ( `Date` date1, `Date` date2 ) : `Number`
 
  Compares the first date to the second date and returns an number indication of their relative values. -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
+
+ @param {Date}     First Date object to compare [Required].
+ @param {Date}     Second Date object to compare to [Required].
+ @return {Number}  -1 = date1 is lessthan date2. 0 = values are equal. 1 = date1 is greaterthan date2.
 {{{
 var today = Date.today();
 var past = Date.today().add(-6).days();
@@ -29,6 +35,10 @@ Date.compare(today, past)                       // 1
 *Date.equals* ( `Date` date1, `Date` date2 ) : `Boolean`
 
  Compares the first Date object to the second Date object and returns true if they are equal.
+ 
+ @param {Date}     First Date object to compare [Required]
+ @param {Date}     Second Date object to compare to [Required]
+ @return {Boolean} true if dates are equal. false if they are not equal.
 {{{
 Date.equals(Date.today(), new Date().clearTime());   // true
 
@@ -46,27 +56,50 @@ Date.equals(d1, d4);  // throws exception
 *Date.getDayNumberFromName* ( `String` dayName ) : `Number`
 
  Gets the day number (0-6) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated day name.
+
+ @param {String}   The name of the month (eg. "February, "Feb", "october", "oct").
+ @return {Number}  The day number
 {{{
 Date.getDayNumberFromName('Tuesday'); // 2
 Date.getDayNumberFromName('sat');     // 6
 }}}
 
 
-*Date.getDaysInMonth* ( `Number` year, `Number` month ) : `Number`
-
- Gets the number of days in the month, given a year and month value. Automatically corrects for leap year.
-{{{
-Date.getDaysInMonth(2008, 1);  // 29
-Date.getDaysInMonth(2007, 10); // 30
-}}}
-
-
 *Date.getMonthNumberFromName* ( `String` monthName ) : `Number`
 
  Gets the month number (0-11) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated month name.
+
+ @param {String}   The name of the day (eg. "Monday, "Mon", "tuesday", "tue", "We", "we").
+ @return {Number}  The day number
 {{{
 Date.getMonthNumberFromName('July'); // 6
 Date.getMonthNumberFromName('feb');  // 1
+}}}
+
+
+*Date.isLeapYear* ( `Number` year ) : `Boolean`
+
+ Returns true if the given year is a leap year, false otherwise.
+
+ @param {Number}   The year.
+ @return {Boolean} true if date is within a LeapYear, otherwise false.
+{{{
+Date.isLeapYear(Date.today().getFullYear()); // true|false
+var date = new Date(2008,1,29);
+Date.isLeapYear(date.getFullYear);           // true
+}}}
+
+
+*Date.getDaysInMonth* ( `Number` year, `Number` month ) : `Number`
+
+ Gets the number of days in the month, given a year and month value. Automatically corrects for leap year.
+
+ @param {Number}   The year.
+ @param {Number}   The month (0-11).
+ @return {Number}  The number of days in the month.
+{{{
+Date.getDaysInMonth(2008, 1);  // 29
+Date.getDaysInMonth(2007, 10); // 30
 }}}
 
 
@@ -84,19 +117,12 @@ Date.getMonthNumberFromName('feb');  // 1
 }}}
 
 
-*Date.isLeapYear* ( `Number` year ) : `Boolean`
-
- Returns true if the given year is a leap year, false otherwise.
-{{{
-Date.isLeapYear(Date.today().getFullYear()); // true|false
-var date = new Date(2008,1,29);
-Date.isLeapYear(date.getFullYear);           // true
-}}}
-
-
 *Date.parse* ( `String` dateString ) : `Date`
 
  Converts the specified string value into its !JavaScript Date equivalent using [CultureInfo culture-specific] format information.
+
+ @param {String}   The string value to convert into a Date object [Required]
+ @return {Date}    A Date object or null if the string cannot be converted into a Date.
 {{{
 Date.parse("today")
 Date.parse("t + 5 d") // today + 5 days
@@ -109,16 +135,24 @@ Date.parse("Thu, 1 July 2004 22:30:00″)
 *Date.parseExact* ( `String` dateString, `String` formatStringOrArray ) : `Date`
 
  Converts the specified string value into its !JavaScript Date equivalent using the specified format (string) or formats (array). The format of the string value must match one of the supplied formats exactly.
+
+ @param {String}   The string value to convert into a Date object [Required].
+ @param {Object}   The expected format {String} or an array of expected formats {Array} of the date string [Required].
+ @return {Date}    A Date object or null if the string cannot be converted into a Date.
 {{{
-Date.parseExact("6/15/2007", "M/d/yyyy");
-Date.parseExact("15-Nov-2007", "d-MMM-yyyy");
-Date.parseExact("4:15 PM", "h:mm tt");
+Date.parseExact("10/15/2004", "M/d/yyyy");  // The Date of 15-Oct-2004
+Date.parse("15-Oct-2004", "M-ddd-yyyy");    // The Date of 15-Oct-2004
+Date.parse("2004.10.15", "yyyy.MM.dd");     // The Date of 15-Oct-2004
+Date.parseExact("10/15/2004", ["M/d/yyyy", "MMMM d, yyyy"]); // The Date of 15-Oct-2004
 }}}
 
 
 *Date.validateDay* ( `Number` day, `Number` year, `Number` monthNumber ) : `Boolean`
 
  Validates the number is within an acceptable range for the days in a month [0-MaxDaysInMonth].
+
+ @param {Number}   The number to check if within range.
+ @return {Boolean} true if within range, otherwise false.
 {{{
 Date.validateDay(15, 2007, 1);  // true, 15-Feb-2007
 Date.validateDay(31, 2007, 10); // false, throws RangeError exception
@@ -128,6 +162,9 @@ Date.validateDay(31, 2007, 10); // false, throws RangeError exception
 *Date.validateHour* ( `Number` hour ) : `Boolean`
 
  Validates the number is within an acceptable range for hours [0-23]. Returns true if within range, otherwise false.
+
+ @param {Number}   The number to check if within range.
+ @return {Boolean} true if within range, otherwise false.
 {{{
 Date.validateHour(15); // true
 Date.validateHour(24); // false, throws RangeError exception
@@ -137,6 +174,9 @@ Date.validateHour(24); // false, throws RangeError exception
 *Date.validateMillisecond* ( `Number` milliseconds ) : `Boolean`
 
  Validates the number is within an acceptable range for milliseconds [0-999]. Returns true if within range, otherwise false.
+
+ @param {Number}   The number to check if within range.
+ @return {Boolean} true if within range, otherwise false.
 {{{
 Date.validateMillisecond(500); // true
 }}}
@@ -145,6 +185,9 @@ Date.validateMillisecond(500); // true
 *Date.validateMinute* ( `Number` minutes ) : `Boolean`
 
  Validates the number is within an acceptable range for minutes [0-59]. Returns true if within range, otherwise false.
+ 
+ @param {Number}   The number to check if within range.
+ @return {Boolean} true if within range, otherwise false.
 {{{
 Date.validateMinute(45); // true
 Date.validateMinute(60); // false, throws RangeError exception
@@ -154,6 +197,9 @@ Date.validateMinute(60); // false, throws RangeError exception
 *Date.validateMonth* ( `Number` month ) : `Boolean`
 
  Validates the number is within an acceptable range for months [0-11].
+
+ @param {Number}   The number to check if within range.
+ @return {Boolean} true if within range, otherwise false.
 {{{
 Date.validateMonth(0);  // true, "January"
 Date.validateMonth(12); // false, throws RangeError exception
@@ -163,6 +209,9 @@ Date.validateMonth(12); // false, throws RangeError exception
 *Date.validateSecond* ( `Number` second ) : `Boolean`
 
  Validates the number is within an acceptable range for seconds [0-59]. Returns true if within range, otherwise false.
+ 
+ @param {Number}   The number to check if within range.
+ @return {Boolean} true if within range, otherwise false.
 {{{
 Date.validateSecond(15); // true
 Date.validateSecond(60); // false, throws RangeError exception
@@ -172,6 +221,9 @@ Date.validateSecond(60); // false, throws RangeError exception
 *Date.validateYear* ( `Number` year ) : `Boolean`
 
  Validates the number is within an acceptable range for years [0-9999].
+
+ @param {Number}   The number to check if within range.
+ @return {Boolean} true if within range, otherwise false.
 {{{
 Date.validateYear(2007); // true
 }}}
@@ -181,6 +233,9 @@ Date.validateYear(2007); // true
 *add* ( `Object` object ) : `Date`
 
  Adds (or subtracts) to the value of the year, month, day, hour, minute, second, millisecond of the date instance using given configuration object. Positive and Negative values allowed.
+
+ @param {Object}   Configuration object containing attributes (months, days, etc.)
+ @return {Date}    this
 {{{
 Date.today().add({ days: 5, months: 1 });
 new Date().add({ years: -1, hours: -6 });
@@ -210,6 +265,9 @@ Date.today().add(config);
 *addMilliseconds* ( `Number` milliseconds ) : `Date`
 
  Adds the specified number of milliseconds to this instance.
+
+ @param {Number}   The number of milliseconds to add. The number can be positive or negative [Required]
+ @return {Date}    this
 {{{
 Date.today().addMilliseconds(500);
 Date.today().addMilliseconds(-500);
@@ -219,6 +277,9 @@ Date.today().addMilliseconds(-500);
 *addSeconds* ( `Number` seconds ) : `Date`
 
  Adds the specified number of seconds to this instance given the number of seconds to add. The number can be positive or negative.
+
+ @param {Number}   The number of seconds to add. The number can be positive or negative [Required]
+ @return {Date}    this
 {{{
 Date.today().addSeconds(30);
 Date.today().addSeconds(-30);
@@ -228,6 +289,9 @@ Date.today().addSeconds(-30);
 *addMinutes* ( `Number` minutes ) : `Date`
 
  Adds the specified number of minutes to this instance given the number of minutes to add. The number can be positive or negative.
+
+ @param {Number}   The number of seconds to add. The number can be positive or negative [Required]
+ @return {Date}    this
 {{{
 Date.today().addMinutes(45);
 Date.today().addMinutes(-45);
@@ -237,6 +301,9 @@ Date.today().addMinutes(-45);
 *addHours* ( `Number` hours ) : `Date`
 
  Adds the specified number of hours to this instance given the number of hours to add. The number can be positive or negative.
+
+ @param {Number}   The number of hours to add. The number can be positive or negative [Required]
+ @return {Date}    this
 {{{
 Date.today().addHours(6);
 Date.today().addHours(-6);
@@ -246,6 +313,9 @@ Date.today().addHours(-6);
 *addDays* ( `Number` days ) : `Date`
 
   Adds the specified number of days to this instance.  The number can be positive or negative.
+
+ @param {Number}   The number of days to add. The number can be positive or negative [Required]
+ @return {Date}    this
 {{{
 Date.today().addDays(1);
 Date.today().addDays(-1);
@@ -255,6 +325,9 @@ Date.today().addDays(-1);
 *addWeeks* ( `Number` weeks ) : `Date`
 
  Adds the specified number of weeks to this instance given the number of weeks to add. The number can be positive or negative.
+
+ @param {Number}   The number of weeks to add. The number can be positive or negative [Required]
+ @return {Date}    this
 {{{
 Date.today().addWeeks(1);
 Date.today().addWeeks(-1);
@@ -264,6 +337,9 @@ Date.today().addWeeks(-1);
 *addMonths* ( `Number` months ) : `Date`
 
  Adds the specified number of months to this instance given the number of months to add. The number can be positive or negative.
+
+ @param {Number}   The number of months to add. The number can be positive or negative [Required]
+ @return {Date}    this
 {{{
 Date.today().addMonths(6);
 Date.today().addMonths(-6);
@@ -273,6 +349,9 @@ Date.today().addMonths(-6);
 *addYears* ( `Number` years ) : `Date`
 
  Adds the specified number of years to this instance given the number of years to add. The number can be positive or negative.
+
+ @param {Number}   The number of years to add. The number can be positive or negative [Required]
+ @return {Date}    this
 {{{
 Date.today().addYears(10);
 Date.today().addYears(-10);
@@ -282,6 +361,10 @@ Date.today().addYears(-10);
 *between* ( `Date` startDate, `Date` endDate ) : `Boolean`
 
  Determines if this instance is between a range of two dates or equal to either the start or end dates.
+
+ @param {Date}     Start of range [Required]
+ @param {Date}     End of range [Required]
+ @return {Boolean} true is this is between or equal to the start and end dates, else false
 {{{
 var past = new Date(2000, 4, 5);
 var future = new Date(2010, 11, 25)
@@ -292,14 +375,29 @@ Date.today().between(past, future); // true|false
 *clearTime* (  ) : `Date`
 
  Resets the time of this Date object to 12:00 AM (00:00), which is the start of the day.
+
+ @param {Boolean}  .clone() this date instance before clearing Time
+ @return {Date}    this 
 {{{
 new Date().clearTime(); // same as Date.today()
+}}}
+
+
+*setTimeToNow* (  ) : `Date`
+
+ Resets the time of this Date object to the current time ('now').
+
+ @return {Date}    this
+{{{
+Date.today().setTimeToNow();
 }}}
 
 
 *clone* (  ) : `Date`
 
  Returns a new Date object that is an exact date and time copy of the original instance.
+
+ @return {Date}    A new Date instance
 {{{
 // Wrong way
 var d1 = new Date(2007, 0, 1); // 1-Jan-2007
@@ -322,6 +420,9 @@ console.log(d2); // 7-Jan-2007
 *compareTo* ( `Date` date ) : `Number`
 
  Compares this instance to a Date object and returns an number indication of their relative values. -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
+
+ @param {Date}     Date object to compare [Required]
+ @return {Number}  -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
 {{{
 var past = Date.today().add(-6).days();
 var future = Date.today().add(6).days();
@@ -335,6 +436,9 @@ Date.today().compareTo(past);                   // 1
 *equals* ( `Date` date ) : `Boolean`
 
  Compares this instance to another Date object and returns true if they are equal, otherwise false.
+
+ @param {Date}     Date object to compare [Required]
+ @return {Boolean} true if dates are equal. false if they are not equal.
 {{{
 Date.today().compareTo(new Date().clearTime()); // true
 
@@ -347,6 +451,8 @@ d1.equals(d2); // false
 *getOrdinalNumber* (  ) : `Number`
 
  Get the Ordinal day (numeric day number) of the year, adjusted for leap year. Returns 1 through 365 (366 in leap years).
+ 
+ @return {Number} 1 through 365 (366 in leap years)
 {{{
 Date.today().getDayOfYear();         // 323
 new Date(2000, 0, 1).getDayOfYear(); // 1
@@ -356,6 +462,8 @@ new Date(2000, 0, 1).getDayOfYear(); // 1
 *getTimezone* (  ) : `String`
 
  Get the timezone abbreviation of the current date.
+ 
+ @return {String} The abbreviated time zone name (e.g. "EST")
 {{{
 }}}
 
@@ -363,21 +471,70 @@ new Date(2000, 0, 1).getDayOfYear(); // 1
 *getUTCOffset* (  ) : UTCOffset
 
  Get the offset from UTC of the current date. Returns the 4-character offset string prefixed with + or - (e.g. "-0500").
+ 
+ @return {String} The 4-character offset string prefixed with + or - (e.g. "-0500")
 {{{
+Date.today().getUTCOffset(); // "-0600"
 }}}
 
 
-*getWeekOfYear* ( `Number` firstDayOfWeek ) : `Number`
-
- Get the week of the year for the current date instance. Takes an optional parameter for the firstDayOfWeek [0-6].
+*getWeek* ( ) : `Number`
+ Get the week number. Week one (1) is the week which contains the first Thursday of the year. Monday is considered the first day of the week.
+ 
+ The .getWeek() function does NOT convert the date to UTC. The local datetime is used. Please use .getISOWeek() to get the week of the UTC converted date.
+ 
+ @return {Number}  1 to 53
 {{{
-Date.today().getWeekOfYear(); // 46
+Date.today().getWeek(); // 7
+}}}
+
+
+*getISOWeek* ( ) : `String`
+ Get the ISO 8601 week number. Week one ("01") is the week which contains the first Thursday of the year. Monday is considered the first day of the week.
+ The .getISOWeek() function does convert the date to it's UTC value. Please use .getWeek() to get the week of the local date.
+ 
+ @return {String}  "01" to "53"
+{{{
+Date.today().getISOWeek(); // "07"
+}}}
+
+
+*getElapsed* ( `Date` date ) : `Number`
+
+ Returns the number of milliseconds between this date and date.
+
+ @param {Date} Defaults to now
+ @return {Number} The diff in milliseconds
+{{{
+new Date().getElapsed(Date.today()); //-17178828
+}}}
+
+
+*setWeek* ( `Number` ) : `Date`
+ Moves the date to Monday of the week set. Week one (1) is the week which contains the first Thursday of the year.
+ 
+ @param {Number}   A Number (1 to 53) that represents the week of the year.
+ @return {Date}    this
+{{{
+Date.today().setWeek(7); // Returns a Date set to the Monday of the week specified
+}}}
+
+
+*getOrdinalNumber* ( ) : `Number`
+
+ Get the Ordinal day (numeric day number) of the year, adjusted for leap year. Return a number 1 through 365 (366 in leap years).
+ 
+ @return {Number} 1 through 365 (366 in leap years)
+{{{
+Date.today().getOrdinalNumber(); // 46
 }}}
 
 
 *hasDaylightSavingTime* ( ) : `Boolean`
 
  Indicates whether Daylight Saving Time is observed in the current time zone.
+ 
+ @return {Boolean} true|false
 {{{
 Date.today().hasDaylightSavingTime(); // true|false
 }}}
@@ -386,6 +543,8 @@ Date.today().hasDaylightSavingTime(); // true|false
 *isDaylightSavingTime* ( ) : `Boolean`
 
  Indicates whether this Date instance is within the Daylight Saving Time range for the current time zone.
+ 
+ @return {Boolean} true|false
 {{{
 Date.today().isDaylightSavingTime(); // true|false
 }}}
@@ -394,6 +553,10 @@ Date.today().isDaylightSavingTime(); // true|false
 *moveToDayOfWeek* ( `Number` dayOfWeek, `Number` direction ) : `Date`
 
  Move to the next or previous dayOfWeek. Whether to move into the future (+1) or past (-1) is controlled by the optional direction parameter.
+
+ @param {Number}   The dayOfWeek to move to
+ @param {Number}   Forward (+1) or Back (-1). Defaults to +1. [Optional]
+ @return {Date}    this
 {{{
 Date.today().moveToDayOfWeek(0);     // move to next Sunday
 Date.today().moveToDayOfWeek(0, -1); // move to last Sunday
@@ -403,6 +566,8 @@ Date.today().moveToDayOfWeek(0, -1); // move to last Sunday
 *moveToFirstDayOfMonth* (  ) : `Date`
 
  Moves the date to the first day of the month.
+
+ @return {Date}    this
 {{{
 new Date(2007, 10, 19).moveToFirstDayOfMonth(); // 1-Nov-2007
 }}}
@@ -411,6 +576,8 @@ new Date(2007, 10, 19).moveToFirstDayOfMonth(); // 1-Nov-2007
 *moveToLastDayOfMonth* (  ) : `Date`
 
  Moves the date to the last day of the month.
+ 
+ @return {Date}    this
 {{{
 new Date(2007, 10, 19).moveToLastDayOfMonth(); // 30-Nov-2007
 }}}
@@ -419,15 +586,35 @@ new Date(2007, 10, 19).moveToLastDayOfMonth(); // 30-Nov-2007
 *moveToMonth* ( `Number` month, `Number` direction ) : `Date`
 
  Move to the next or previous month. Whether to move into the future (+1) or past (-1) is controlled by the optional direction parameter.
+
+ @param {Number}   The month to move to. 0 = January, 11 = December
+ @param {Number}   Forward (+1) or Back (-1). Defaults to +1. [Optional]
+ @return {Date}    this
 {{{
 Date.today().moveToMonth(0);     // move to next January
 Date.today().moveToMonth(0, -1); // move to last January
 }}}
 
 
+*moveToNthOccurrence* ( `Number` dayOfWeek, `Number` occurrence ) : `Date`
+
+ Moves the date to the next n'th occurrence of the dayOfWeek starting from the beginning of the month. The number (-1) is a magic number and will return the last occurrence of the dayOfWeek in the month.
+
+ @param {Number}   The dayOfWeek to move to
+ @param {Number}   The n'th occurrence to move to. Use (-1) to return the last occurrence in the month
+ @return {Date}    this
+{{{
+Date.today().moveToNthOccurrence(0, 1);     // First Sunday of the month
+Date.today().moveToNthOccurrence(0, 3);     // Third Sunday of the month
+Date.today().moveToNthOccurrence(0, -1);    // Last Sunday of the month
+}}}
+
 *set* ( `Object` object ) : `Date`
 
  Set the value of year, month, day, hour, minute, second, millisecond of date instance using given configuration object.
+
+ @param {Object}   Configuration object containing attributes (month, day, etc.)
+ @return {Date}    this
 {{{
 Date.today().set({ day: 15, hour: 8 }); // Sets the day to the 15th day of the current month and the hour to 8 (AM).
 }}}
@@ -456,6 +643,8 @@ Date.today().set(config);
 *setTimezone* ( `String` timezoneAbbreviation ) : `Date`
 
  Set the timezone for the current date using a [CultureInfo culture-specific] timezone abbreviation (ex: 'PST'). Note that in most !JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
+ 
+ @return {Date}    this
 {{{
 }}}
 
@@ -463,13 +652,31 @@ Date.today().set(config);
 *setTimezoneOffset* ( `Number` timezoneOffset ) : `Date`
 
  Set the timezone for the current date using an offset (ex: '-0700'). Note that in most !JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
+ 
+ @return {Date}    this
 {{{
 }}}
 
+*toISOString* ( ) : `String`
+
+ Converts the current date instance into a string with an ISO 8601 format. The date is converted to it's UTC value. As per the ISO 8601 specification, the string will be wrapped with double quotation marks (").
+ 
+ @return {String}  ISO 8601 string of date
+{{{
+new Date().toISOString();  // ""2008-04-13T10:07:15Z""
+}}}
+ 
+ The local time version of ISO 8601 formatted string can be created by passing a custom format to the .toString() function.
+{{{
+new Date().toString("yyyy-MM-ddTHH:mm:ssZ");  // "2008-04-13T04:11:05Z"
+}}}
 
 *toString* ( `String` format ) : `String`
 
  Converts the value of the current Date object to its equivalent string representation. Use format argument to specify format (optional). See FormatSpecifiers for more info.
+ 
+ @param {String}   A format string consisting of one or more format spcifiers [Optional].
+ @return {String}  A string representation of the current Date object.
 {{{
 Date.today().toString();           // native .toString() functionality
 Date.today().toString("M/d/yyyy"); // 19-Nov-2007
