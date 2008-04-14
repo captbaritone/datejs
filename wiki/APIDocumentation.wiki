@@ -17,8 +17,10 @@ Date.today(); // Equivalent to new Date().clearTime()
 
  Compares the first date to the second date and returns an number indication of their relative values. -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
 
- @param {Date}     First Date object to compare [Required].
- @param {Date}     Second Date object to compare to [Required].
+ @param {Date}     First Date object to compare. *required*
+
+ @param {Date}     Second Date object to compare to. *required*
+
  @return {Number}  -1 = date1 is lessthan date2. 0 = values are equal. 1 = date1 is greaterthan date2.
 {{{
 var today = Date.today();
@@ -36,8 +38,8 @@ Date.compare(today, past)                       // 1
 
  Compares the first Date object to the second Date object and returns true if they are equal.
  
- @param {Date}     First Date object to compare [Required]
- @param {Date}     Second Date object to compare to [Required]
+ @param {Date}     First Date object to compare [required]
+ @param {Date}     Second Date object to compare to [required]
  @return {Boolean} true if dates are equal. false if they are not equal.
 {{{
 Date.equals(Date.today(), new Date().clearTime());   // true
