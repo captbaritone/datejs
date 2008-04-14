@@ -1,11 +1,25 @@
 #summary Format Specifiers are used to specify date formats for display and input.
 #labels Featured
 
-= .toString( `String` format ) =
-== CUSTOM DATE AND TIME FORMAT SPECIFIERS ==
+=toString (available in `core.js`)=
 
-The following format specifiers are used with the `.toString(format)` function. 
+----
 
+==http://www.datejs.com/images/function.gif .toString( `String` format ) : `String`==
+
+ The .toString() function is available in `core.js` or any compiled `/build/` file.
+
+ ====Parameters====
+
+  * {`String`}   A format string consisting of one or more format spcifiers. *optional*.
+ 
+ ====Return Type====
+ 
+ {`String`}  A string representation of the current Date object.
+ 
+ ====CUSTOM DATE AND TIME FORMAT SPECIFIERS====
+
+ The following format specifiers are used with the `.toString(format)` function. 
 {{{
 Format  Description                                                                  Example
 ------  ---------------------------------------------------------------------------  -----------------------
@@ -42,9 +56,8 @@ Format  Description                                                             
  S      The ordinal suffix ("st, "nd", "rd" or "th") of the current day.            "st, "nd", "rd" or "th"
 }}}
 
-= .toString( `String` format ) =
-== STANDARD DATE AND TIME FORMAT SPECIFIERS ==
-
+.
+ ====STANDARD DATE AND TIME FORMAT SPECIFIERS====
 {{{
 Format  Description                                                                  Example ("en-US")
 ------  ---------------------------------------------------------------------------  -----------------------
@@ -60,15 +73,35 @@ Format  Description                                                             
  y      The CultureInfo yearMonth Format Pattern                                     "MMMM, yyyy"
 }}} 
  
+.
+.
+=format (available in `extras.js`)=
+
+----
+
+==http://www.datejs.com/images/function.gif .format( `String` format ) : `String`== 
+
+ The .format() function is available in the optional `extras.js` module. The `extras.js` module is NOT included with the `/build/` file and must be added separately to your page. 
+
+ The `core.js` (or any `/build/` file) is required and must be included before for `extras.js`.
+
+{{{
+<script type="text/javascript" src="extras.js"></script>
+}}}
+
+ ====Parameters====
+
+  * {`String`}   A format string consisting of one or more format spcifiers. *optional*
  
-= .format( `String` format ) =
-== FORMAT SPECIFIERS ==
+ ====Return Type====
+ 
+ {`String`}  A string representation of the current Date object.
 
-The following format specifiers are used with the `.format(format)` or `.$format(format)` function available by including the `extras.js` module. 
+ The following format specifiers are used with the `.format(format)` or `.$format(format)` function available by including the `extras.js` module. 
 
-The following descriptions are from http://www.php.net/strftime and http://www.php.net/manual/en/function.date.php. 
-Copyright © 2001-2008 The PHP Group
+ The following descriptions are from http://www.php.net/strftime and http://www.php.net/manual/en/function.date.php. Copyright Â© 2001-2008 The PHP Group
 
+ ====PHP/UNIX FORMAT SPECIFIERS====
 {{{
 Format  Description                                                                  Example
 ------  ---------------------------------------------------------------------------  -----------------------
