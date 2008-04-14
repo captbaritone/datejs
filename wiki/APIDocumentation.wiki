@@ -4,38 +4,38 @@
 = Public Static Methods =
 ----
 
-==*Date.today* () : `Date`==
+==http://www.datejs.com/images/function.gif Date.today () : `Date`==
 
-Gets a date that is set to the current date. The time is set to the start of the day (00:00 or 12:00 AM).
-
-*Parameters*
+ Gets a date that is set to the current date. The time is set to the start of the day (00:00 or 12:00 AM).
+ 
+ ====Parameters====
 
  None
 
-*Return Value*
+ ====Return Value====
 
  {`Date`}    The current date.
-
-*Examples*
+ 
+ ====Examples==== 
 {{{
 Date.today(); // Equivalent to new Date().clearTime()
 }}}
 
+.
+==http://www.datejs.com/images/function.gif Date.compare ( `Date` date1, `Date` date2 ) : `Number`==
 
-==*Date.compare* ( `Date` date1, `Date` date2 ) : `Number`==
-
-Compares the first date to the second date and returns an number indication of their relative values. -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
-
-*Parameters*
+ Compares the first date to the second date and returns an number indication of their relative values. -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
+ 
+ ====Parameters====
 
   * {`Date` date1}     First Date object to compare. *required*
   * {`Date` date2}     Second Date object to compare to. *required*
 
-*Return Value*
+ ====Return Value====
 
  {`Number`}  -1 = date1 is _lessthan_ date2. 0 = values are _equal_. 1 = date1 is _greaterthan_ date2.
-
-*Examples*
+ 
+ ====Examples==== 
 {{{
 var today = Date.today();
 var past = Date.today().add(-6).days();
@@ -47,20 +47,21 @@ Date.compare(today, new Date().clearTime());    // 0
 Date.compare(today, past)                       // 1
 }}}
 
+.
+==http://www.datejs.com/images/function.gif Date.equals ( `Date` date1, `Date` date2 ) : `Boolean`==
 
-==*Date.equals* ( `Date` date1, `Date` date2 ) : `Boolean`==
-
-Compares the first Date object to the second Date object and returns true if they are equal.
-
-*Parameters* 
-
+ Compares the first Date object to the second Date object and returns true if they are equal.
+ 
+ ====Parameters==== 
+  
   * {`Date` date1}     First Date object to compare. *required*
   * {`Date` date2}     Second Date object to compare to *required*
 
-*Return Value*
+ ====Return Value====
+ 
  {`Boolean`} true if dates are equal. false if they are not equal.
-
-*Examples*
+ 
+ ====Examples==== 
 {{{
 Date.equals(Date.today(), new Date().clearTime());   // true
 
@@ -74,93 +75,160 @@ Date.equals(d1, d3);  // true
 Date.equals(d1, d4);  // throws exception
 }}}
 
-
-*Date.getDayNumberFromName* ( `String` dayName ) : `Number`
+.
+==http://www.datejs.com/images/function.gif Date.getDayNumberFromName ( `String` dayName ) : `Number`==
 
  Gets the day number (0-6) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated day name.
+ 
+ ====Parameters====
 
- @param {String}   The name of the month (eg. "February, "Feb", "october", "oct").
- @return {Number}  The day number
+  * {`String` dayName}   The name of the month (eg. "February, "Feb", "october", "oct").
+ 
+ ====Return Value====
+
+ {`Number`}  The day number
+
+ ====Examples==== 
 {{{
 Date.getDayNumberFromName('Tuesday'); // 2
 Date.getDayNumberFromName('sat');     // 6
 }}}
 
-
-*Date.getMonthNumberFromName* ( `String` monthName ) : `Number`
+.
+==http://www.datejs.com/images/function.gif Date.getMonthNumberFromName ( `String` monthName ) : `Number`==
 
  Gets the month number (0-11) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated month name.
+ 
+ ====Parameters====
 
- @param {String}   The name of the day (eg. "Monday, "Mon", "tuesday", "tue", "We", "we").
- @return {Number}  The day number
+  * {`String` monthName}   The name of the day (eg. "Monday, "Mon", "tuesday", "tue", "We", "we").
+ 
+ ====Return Value====
+
+ {`Number`}  The day number
+
+ ====Examples==== 
 {{{
 Date.getMonthNumberFromName('July'); // 6
 Date.getMonthNumberFromName('feb');  // 1
 }}}
 
-
-*Date.isLeapYear* ( `Number` year ) : `Boolean`
+.
+==http://www.datejs.com/images/function.gif Date.isLeapYear ( `Number` year ) : `Boolean`==
 
  Returns true if the given year is a leap year, false otherwise.
+ 
+ ====Parameters====
 
- @param {Number}   The year.
- @return {Boolean} true if date is within a LeapYear, otherwise false.
+  * {`Number` year}   The year.
+ 
+ ====Return Value====
+
+ {`Boolean`} true if date is within a LeapYear, otherwise false.
+ 
+ ====Examples==== 
 {{{
 Date.isLeapYear(Date.today().getFullYear()); // true|false
 var date = new Date(2008,1,29);
 Date.isLeapYear(date.getFullYear);           // true
 }}}
 
-
-*Date.getDaysInMonth* ( `Number` year, `Number` month ) : `Number`
+.
+==http://www.datejs.com/images/function.gif Date.getDaysInMonth ( `Number` year, `Number` month ) : `Number`==
 
  Gets the number of days in the month, given a year and month value. Automatically corrects for leap year.
+ 
+ ====Parameters====
 
- @param {Number}   The year.
- @param {Number}   The month (0-11).
- @return {Number}  The number of days in the month.
+  * {`Number` year}   The year.
+  * {`Number` month}   The month (0-11).
+ 
+ ====Return Value====
+
+ {`Number`}  The number of days in the month.
+ 
+ ====Examples==== 
 {{{
 Date.getDaysInMonth(2008, 1);  // 29
 Date.getDaysInMonth(2007, 10); // 30
 }}}
 
-
-*Date.getTimezoneAbbreviation* ( `Number` timezoneOffset, `Boolean` isDayLightSavingsTime ) : `String`
+.
+==http://www.datejs.com/images/function.gif Date.getTimezoneAbbreviation ( `Number` timezoneOffset, `Boolean` isDayLightSavingsTime ) : `String`==
 
  Returns a [CultureInfo culture-specific] timezone abbreviation based on a given offset and a boolean indicating whether daylight savings time is in effect.
+ 
+ ====Parameters====
+
+  * {`Number` timezoneOffset}   The year.
+  * {`Boolean` isDayLightSavingsTime}   Whether the date instance is observing Daylight Saving Time (Summer Time)
+ 
+ ====Return Value====
+
+ {`String`}  The timezone abbreviation
+
+ ====Examples==== 
 {{{
+var today = Date.today();
+Date.getTimezoneAbbreviation(today.getTimezoneOffset, today.isDayLightSavingsTime()); // "UTC", "GMT", "EST", "PDT", etc.
 }}}
 
-
-*Date.getTimezoneOffset* ( `String` timezoneName, `Boolean` isDayLightSavingsTime ) : `Number`
+.
+==http://www.datejs.com/images/function.gif Date.getTimezoneOffset ( `String` timezoneAbbreviation, `Boolean` isDayLightSavingsTime ) : `Number`==
 
  Gets the timezone offset if given a [CultureInfo culture-specific] string which is a valid full or abbreviated timezone name and a boolean indicating whether daylight savings time is in effect.
+
+ ====Parameters====
+
+  * {`Number` timezoneAbbreviation}   The timezone abbreviation
+  * {`Boolean` isDayLightSavingsTime}   Whether the date instance is observing Daylight Saving Time (Summer Time)
+ 
+ ====Return Value====
+
+ {`String`}  The timezone abbreviation
+  
+ ====Examples==== 
 {{{
+Date.getTimezoneOffset("PST", true);
 }}}
 
-
-*Date.parse* ( `String` dateString ) : `Date`
+.
+==http://www.datejs.com/images/function.gif Date.parse ( `String` dateString ) : `Date`==
 
  Converts the specified string value into its !JavaScript Date equivalent using [CultureInfo culture-specific] format information.
+ 
+ ====Parameters====
 
- @param {String}   The string value to convert into a Date object [Required]
- @return {Date}    A Date object or null if the string cannot be converted into a Date.
+  * {`String` dateString}   The string value to convert into a Date object. *required*
+
+ ====Return Value====
+
+ {`Date`}    A Date object or null if the string cannot be converted into a Date.
+ 
+ ====Examples==== 
 {{{
 Date.parse("today")
 Date.parse("t + 5 d") // today + 5 days
 Date.parse("next thursday")
-Date.parse("February 20th 1973″)
-Date.parse("Thu, 1 July 2004 22:30:00″)
+Date.parse("February 20th 1973?)
+Date.parse("Thu, 1 July 2004 22:30:00?)
 }}}
 
-
-*Date.parseExact* ( `String` dateString, `String` formatStringOrArray ) : `Date`
+.
+==http://www.datejs.com/images/function.gif Date.parseExact ( `String` dateString, `String` formatStringOrArray ) : `Date`==
 
  Converts the specified string value into its !JavaScript Date equivalent using the specified format (string) or formats (array). The format of the string value must match one of the supplied formats exactly.
+ 
+ ====Parameters====
 
- @param {String}   The string value to convert into a Date object [Required].
- @param {Object}   The expected format {String} or an array of expected formats {Array} of the date string [Required].
- @return {Date}    A Date object or null if the string cannot be converted into a Date.
+  * {`String` dateString}   The string value to convert into a Date object. *required*.
+  * {Object formatStringOrArray}   The expected format {`String`} or an array of expected formats {Array} of the date string. *required*.
+ 
+ ====Return Value====
+
+ {`Date`}    A Date object or null if the string cannot be converted into a Date.
+ 
+ ====Examples==== 
 {{{
 Date.parseExact("10/15/2004", "M/d/yyyy");  // The Date of 15-Oct-2004
 Date.parse("15-Oct-2004", "M-ddd-yyyy");    // The Date of 15-Oct-2004
@@ -168,101 +236,165 @@ Date.parse("2004.10.15", "yyyy.MM.dd");     // The Date of 15-Oct-2004
 Date.parseExact("10/15/2004", ["M/d/yyyy", "MMMM d, yyyy"]); // The Date of 15-Oct-2004
 }}}
 
-
-*Date.validateDay* ( `Number` day, `Number` year, `Number` monthNumber ) : `Boolean`
+.
+==http://www.datejs.com/images/function.gif Date.validateDay ( `Number` day, `Number` fullYear, `Number` monthNumber ) : `Boolean`==
 
  Validates the number is within an acceptable range for the days in a month [0-MaxDaysInMonth].
+ 
+ ====Parameters====
 
- @param {Number}   The number to check if within range.
- @return {Boolean} true if within range, otherwise false.
+  * {`Number` day}   The number to check if within range.
+  * {`Number` fullYear}   The number to check if within range.
+  * {`Number` monthNumber}   The number to check if within range.
+ 
+ ====Return Value====
+
+ {`Boolean`} true if within range, otherwise false.
+ 
+ ====Examples==== 
 {{{
 Date.validateDay(15, 2007, 1);  // true, 15-Feb-2007
 Date.validateDay(31, 2007, 10); // false, throws RangeError exception
 }}}
 
-
-*Date.validateHour* ( `Number` hour ) : `Boolean`
+.
+==http://www.datejs.com/images/function.gif Date.validateHour ( `Number` hour ) : `Boolean`==
 
  Validates the number is within an acceptable range for hours [0-23]. Returns true if within range, otherwise false.
+ 
+ ====Parameters====
 
- @param {Number}   The number to check if within range.
- @return {Boolean} true if within range, otherwise false.
+  * {`Number` hour}   The number to check if within range.
+ 
+ ====Return Value====
+
+ {`Boolean`} true if within range, otherwise false.
+ 
+ ====Examples==== 
 {{{
 Date.validateHour(15); // true
 Date.validateHour(24); // false, throws RangeError exception
 }}}
 
-
-*Date.validateMillisecond* ( `Number` milliseconds ) : `Boolean`
+.
+==http://www.datejs.com/images/function.gif Date.validateMillisecond ( `Number` milliseconds ) : `Boolean`==
 
  Validates the number is within an acceptable range for milliseconds [0-999]. Returns true if within range, otherwise false.
+ 
+ ====Parameters====
 
- @param {Number}   The number to check if within range.
- @return {Boolean} true if within range, otherwise false.
+  * {`Number` milliseconds}   The number to check if within range.
+ 
+ ====Return Value====
+
+ {`Boolean`} true if within range, otherwise false.
+ 
+ ====Examples==== 
 {{{
 Date.validateMillisecond(500); // true
 }}}
 
-
-*Date.validateMinute* ( `Number` minutes ) : `Boolean`
+.
+==http://www.datejs.com/images/function.gif Date.validateMinute ( `Number` minutes ) : `Boolean`==
 
  Validates the number is within an acceptable range for minutes [0-59]. Returns true if within range, otherwise false.
  
- @param {Number}   The number to check if within range.
- @return {Boolean} true if within range, otherwise false.
+ ====Parameters====
+ 
+  * {`Number` minutes}   The number to check if within range.
+ 
+ ====Return Value====
+
+ {`Boolean`} true if within range, otherwise false.
+ 
+ ====Examples==== 
 {{{
 Date.validateMinute(45); // true
 Date.validateMinute(60); // false, throws RangeError exception
 }}}
 
-
-*Date.validateMonth* ( `Number` month ) : `Boolean`
+.
+==http://www.datejs.com/images/function.gif Date.validateMonth ( `Number` month ) : `Boolean`==
 
  Validates the number is within an acceptable range for months [0-11].
+ 
+ ====Parameters====
 
- @param {Number}   The number to check if within range.
- @return {Boolean} true if within range, otherwise false.
+  * {`Number` month}   The number to check if within range.
+ 
+ ====Return Value====
+
+ {`Boolean`} true if within range, otherwise false.
+ 
+ ====Examples==== 
 {{{
 Date.validateMonth(0);  // true, "January"
 Date.validateMonth(12); // false, throws RangeError exception
 }}}
 
-
-*Date.validateSecond* ( `Number` second ) : `Boolean`
+.
+==http://www.datejs.com/images/function.gif Date.validateSecond ( `Number` second ) : `Boolean`==
 
  Validates the number is within an acceptable range for seconds [0-59]. Returns true if within range, otherwise false.
  
- @param {Number}   The number to check if within range.
- @return {Boolean} true if within range, otherwise false.
+ ====Parameters====
+ 
+  * {`Number` second}   The number to check if within range.
+ 
+ ====Return Value====
+
+ {`Boolean`} true if within range, otherwise false.
+ 
+ ====Examples==== 
 {{{
 Date.validateSecond(15); // true
 Date.validateSecond(60); // false, throws RangeError exception
 }}}
 
-
-*Date.validateYear* ( `Number` year ) : `Boolean`
+.
+==http://www.datejs.com/images/function.gif Date.validateYear ( `Number` year ) : `Boolean`==
 
  Validates the number is within an acceptable range for years [0-9999].
+ 
+ ====Parameters====
 
- @param {Number}   The number to check if within range.
- @return {Boolean} true if within range, otherwise false.
+  * {`Number` year}   The number to check if within range.
+ 
+ ====Return Value====
+
+ {`Boolean`} true if within range, otherwise false.
+ 
+ ====Examples==== 
 {{{
 Date.validateYear(2007); // true
 }}}
+.
 
 = Public Instance Methods =
 
-*add* ( `Object` object ) : `Date`
+----
+
+==http://www.datejs.com/images/function.gif add ( `Object` config ) : `Date`==
 
  Adds (or subtracts) to the value of the year, month, day, hour, minute, second, millisecond of the date instance using given configuration object. Positive and Negative values allowed.
+ 
+ ====Parameters====
 
- @param {Object}   Configuration object containing attributes (months, days, etc.)
- @return {Date}    this
+  * {`Object` config}   Configuration object containing attributes (months, days, etc.)
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().add({ days: 5, months: 1 });
 new Date().add({ years: -1, hours: -6 });
 }}}
+ 
  The following details all the options for .add().
+ 
+ ====Examples==== 
 {{{
 // returns Jul 26 2009 18:45:30 given today as 11-Jan-2008
 Date.today().add({
@@ -283,143 +415,229 @@ var config = {milliseconds: 500, seconds: 30, minutes: 45, hours: 18, days: 15, 
 Date.today().add(config);
 }}}
 
-
-*addMilliseconds* ( `Number` milliseconds ) : `Date`
+.
+==http://www.datejs.com/images/function.gif addMilliseconds ( `Number` milliseconds ) : `Date`==
 
  Adds the specified number of milliseconds to this instance.
+ 
+ ====Parameters====
 
- @param {Number}   The number of milliseconds to add. The number can be positive or negative [Required]
- @return {Date}    this
+  * {`Number` milliseconds}   The number of milliseconds to add. The number can be positive or negative. *required*
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().addMilliseconds(500);
 Date.today().addMilliseconds(-500);
 }}}
 
-
-*addSeconds* ( `Number` seconds ) : `Date`
+.
+==http://www.datejs.com/images/function.gif addSeconds ( `Number` seconds ) : `Date`==
 
  Adds the specified number of seconds to this instance given the number of seconds to add. The number can be positive or negative.
+ 
+ ====Parameters====
 
- @param {Number}   The number of seconds to add. The number can be positive or negative [Required]
- @return {Date}    this
+  * {`Seconds`}   The number of seconds to add. The number can be positive or negative. *required*
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().addSeconds(30);
 Date.today().addSeconds(-30);
 }}}
 
-
-*addMinutes* ( `Number` minutes ) : `Date`
+.
+==http://www.datejs.com/images/function.gif addMinutes ( `Number` minutes ) : `Date`==
 
  Adds the specified number of minutes to this instance given the number of minutes to add. The number can be positive or negative.
+ 
+ ====Parameters====
 
- @param {Number}   The number of seconds to add. The number can be positive or negative [Required]
- @return {Date}    this
+  * {`Number minutes`}   The number of seconds to add. The number can be positive or negative. *required*
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().addMinutes(45);
 Date.today().addMinutes(-45);
 }}}
 
-
-*addHours* ( `Number` hours ) : `Date`
+.
+==http://www.datejs.com/images/function.gif addHours ( `Number` hours ) : `Date`==
 
  Adds the specified number of hours to this instance given the number of hours to add. The number can be positive or negative.
+ 
+ ====Parameters====
 
- @param {Number}   The number of hours to add. The number can be positive or negative [Required]
- @return {Date}    this
+  * {`Number` hours}   The number of hours to add. The number can be positive or negative. *required*
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().addHours(6);
 Date.today().addHours(-6);
 }}}
 
+.
+==http://www.datejs.com/images/function.gif addDays ( `Number` days ) : `Date`==
 
-*addDays* ( `Number` days ) : `Date`
+ Adds the specified number of days to this instance.  The number can be positive or negative.
+ 
+ ====Parameters====
 
-  Adds the specified number of days to this instance.  The number can be positive or negative.
+  * {`Number` days}   The number of days to add. The number can be positive or negative. *required*
 
- @param {Number}   The number of days to add. The number can be positive or negative [Required]
- @return {Date}    this
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().addDays(1);
 Date.today().addDays(-1);
 }}}
 
-
-*addWeeks* ( `Number` weeks ) : `Date`
+.
+==http://www.datejs.com/images/function.gif addWeeks ( `Number` weeks ) : `Date`==
 
  Adds the specified number of weeks to this instance given the number of weeks to add. The number can be positive or negative.
+ 
+ ====Parameters====
 
- @param {Number}   The number of weeks to add. The number can be positive or negative [Required]
- @return {Date}    this
+  * {`Number` weeks}   The number of weeks to add. The number can be positive or negative. *required*
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().addWeeks(1);
 Date.today().addWeeks(-1);
 }}}
 
-
-*addMonths* ( `Number` months ) : `Date`
+.
+==http://www.datejs.com/images/function.gif addMonths ( `Number` months ) : `Date`==
 
  Adds the specified number of months to this instance given the number of months to add. The number can be positive or negative.
+ 
+ ====Parameters====
 
- @param {Number}   The number of months to add. The number can be positive or negative [Required]
- @return {Date}    this
+  * {`Number` months}   The number of months to add. The number can be positive or negative. *required*
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().addMonths(6);
 Date.today().addMonths(-6);
 }}}
 
-
-*addYears* ( `Number` years ) : `Date`
+.
+==http://www.datejs.com/images/function.gif addYears ( `Number` years ) : `Date`==
 
  Adds the specified number of years to this instance given the number of years to add. The number can be positive or negative.
+ 
+ ====Parameters====
 
- @param {Number}   The number of years to add. The number can be positive or negative [Required]
- @return {Date}    this
+  * {`Number` years}   The number of years to add. The number can be positive or negative. *required*
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().addYears(10);
 Date.today().addYears(-10);
 }}}
 
-
-*between* ( `Date` startDate, `Date` endDate ) : `Boolean`
+.
+==http://www.datejs.com/images/function.gif between ( `Date` startDate, `Date` endDate ) : `Boolean`==
 
  Determines if this instance is between a range of two dates or equal to either the start or end dates.
+ 
+ ====Parameters====
 
- @param {Date}     Start of range [Required]
- @param {Date}     End of range [Required]
- @return {Boolean} true is this is between or equal to the start and end dates, else false
+  * {`Date` startDate}     Start of range. *required*
+  * {`Date` endDate}     End of range. *required*
+
+ ====Return Value====
+
+ {`Boolean`} true is this is between or equal to the start and end dates, else false
+
+ ====Examples==== 
 {{{
 var past = new Date(2000, 4, 5);
 var future = new Date(2010, 11, 25)
 Date.today().between(past, future); // true|false
 }}}
 
-
-*clearTime* (  ) : `Date`
+.
+==http://www.datejs.com/images/function.gif clearTime (  ) : `Date`==
 
  Resets the time of this Date object to 12:00 AM (00:00), which is the start of the day.
+ 
+ ====Parameters====
 
- @param {Boolean}  .clone() this date instance before clearing Time
- @return {Date}    this 
+ None
+
+ ====Return Value====
+
+ {`Date`}    this 
+
+ ====Examples==== 
 {{{
 new Date().clearTime(); // same as Date.today()
 }}}
 
-
-*setTimeToNow* (  ) : `Date`
+.
+==http://www.datejs.com/images/function.gif setTimeToNow (  ) : `Date`==
 
  Resets the time of this Date object to the current time ('now').
+ 
+ ====Parameters====
+ 
+ None
 
- @return {Date}    this
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().setTimeToNow();
 }}}
 
-
-*clone* (  ) : `Date`
+.
+==http://www.datejs.com/images/function.gif clone (  ) : `Date`==
 
  Returns a new Date object that is an exact date and time copy of the original instance.
+ 
+ ====Parameters====
 
- @return {Date}    A new Date instance
+ None
+
+ ====Return Value====
+
+ {`Date`}    A new Date instance
+
+ ====Examples==== 
 {{{
 // Wrong way
 var d1 = new Date(2007, 0, 1); // 1-Jan-2007
@@ -438,13 +656,20 @@ console.log(d1); // 1-Jan-2007
 console.log(d2); // 7-Jan-2007
 }}}
 
-
-*compareTo* ( `Date` date ) : `Number`
+.
+==http://www.datejs.com/images/function.gif compareTo ( `Date` date ) : `Number`==
 
  Compares this instance to a Date object and returns an number indication of their relative values. -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
+ 
+ ====Parameters====
 
- @param {Date}     Date object to compare [Required]
- @return {Number}  -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
+  * {`Date` date}     Date object to compare. *required*
+
+ ====Return Value====
+
+ {`Number`}  -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
+ 
+ ====Examples==== 
 {{{
 var past = Date.today().add(-6).days();
 var future = Date.today().add(6).days();
@@ -454,13 +679,20 @@ Date.today().compareTo(new Date().clearTime()); // 0
 Date.today().compareTo(past);                   // 1
 }}}
 
-
-*equals* ( `Date` date ) : `Boolean`
+.
+==http://www.datejs.com/images/function.gif equals ( `Date` date ) : `Boolean`==
 
  Compares this instance to another Date object and returns true if they are equal, otherwise false.
+ 
+ ====Parameters====
 
- @param {Date}     Date object to compare [Required]
- @return {Boolean} true if dates are equal. false if they are not equal.
+  * {`Date` date}     Date object to compare. *required*
+
+ ====Return Value====
+
+ {`Boolean`} true if dates are equal. false if they are not equal.
+ 
+ ====Examples==== 
 {{{
 Date.today().compareTo(new Date().clearTime()); // true
 
@@ -469,178 +701,309 @@ var d2 = Date.today().addHours(5);
 d1.equals(d2); // false
 }}}
 
-
-*getOrdinalNumber* (  ) : `Number`
+.
+==http://www.datejs.com/images/function.gif getOrdinalNumber (  ) : `Number`==
 
  Get the Ordinal day (numeric day number) of the year, adjusted for leap year. Returns 1 through 365 (366 in leap years).
  
- @return {Number} 1 through 365 (366 in leap years)
+ ====Parameters====
+
+ None
+
+ ====Return Value====
+
+ {`Number`} 1 through 365 (366 in leap years)
+
+ ====Examples==== 
 {{{
 Date.today().getDayOfYear();         // 323
 new Date(2000, 0, 1).getDayOfYear(); // 1
 }}}
 
-
-*getTimezone* (  ) : `String`
+.
+==http://www.datejs.com/images/function.gif getTimezone (  ) : `String`==
 
  Get the timezone abbreviation of the current date.
  
- @return {String} The abbreviated time zone name (e.g. "EST")
+ ====Parameters====
+
+ None
+
+ ====Return Value====
+
+ {`String`} The abbreviated time zone name (e.g. "EST")
+
+ ====Examples==== 
 {{{
+Date.today().getTimezone();
 }}}
 
-
-*getUTCOffset* (  ) : UTCOffset
+.
+==http://www.datejs.com/images/function.gif getUTCOffset (  ) : UTCOffset==
 
  Get the offset from UTC of the current date. Returns the 4-character offset string prefixed with + or - (e.g. "-0500").
  
- @return {String} The 4-character offset string prefixed with + or - (e.g. "-0500")
+ ====Parameters====
+
+ None
+
+ ====Return Value====
+
+ {`String`} The 4-character offset string prefixed with + or - (e.g. "-0500")
+
+ ====Examples==== 
 {{{
 Date.today().getUTCOffset(); // "-0600"
 }}}
 
+.
+==http://www.datejs.com/images/function.gif getWeek ( ) : `Number`==
 
-*getWeek* ( ) : `Number`
  Get the week number. Week one (1) is the week which contains the first Thursday of the year. Monday is considered the first day of the week.
  
  The .getWeek() function does NOT convert the date to UTC. The local datetime is used. Please use .getISOWeek() to get the week of the UTC converted date.
  
- @return {Number}  1 to 53
+ ====Parameters====
+
+ None
+
+ ====Return Value====
+
+ {`Number`}  1 to 53
+
+ ====Examples==== 
 {{{
 Date.today().getWeek(); // 7
 }}}
 
+.
+==http://www.datejs.com/images/function.gif getISOWeek ( ) : `String`==
 
-*getISOWeek* ( ) : `String`
  Get the ISO 8601 week number. Week one ("01") is the week which contains the first Thursday of the year. Monday is considered the first day of the week.
+
  The .getISOWeek() function does convert the date to it's UTC value. Please use .getWeek() to get the week of the local date.
  
- @return {String}  "01" to "53"
+ ====Parameters====
+
+ None
+
+ ====Return Value====
+
+ {`String`}  "01" to "53"
+
+ ====Examples==== 
 {{{
 Date.today().getISOWeek(); // "07"
 }}}
 
-
-*getElapsed* ( `Date` date ) : `Number`
+.
+==http://www.datejs.com/images/function.gif *getElapsed* ( `Date` date ) : `Number`==
 
  Returns the number of milliseconds between this date and date.
+ 
+ ====Parameters====
 
- @param {Date} Defaults to now
- @return {Number} The diff in milliseconds
+  * {`Date` date} Defaults to now
+
+ ====Return Value====
+
+ {`Number`} The diff in milliseconds
+
+ ====Examples==== 
 {{{
 new Date().getElapsed(Date.today()); //-17178828
 }}}
 
-
-*setWeek* ( `Number` ) : `Date`
+.
+==http://www.datejs.com/images/function.gif setWeek ( `Number` week ) : `Date`==
+ 
  Moves the date to Monday of the week set. Week one (1) is the week which contains the first Thursday of the year.
  
- @param {Number}   A Number (1 to 53) that represents the week of the year.
- @return {Date}    this
+ ====Parameters====
+ 
+  * {`Number` week}   A Number (1 to 53) that represents the week of the year.
+ 
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().setWeek(7); // Returns a Date set to the Monday of the week specified
 }}}
 
-
-*getOrdinalNumber* ( ) : `Number`
+.
+==http://www.datejs.com/images/function.gif getOrdinalNumber ( ) : `Number`==
 
  Get the Ordinal day (numeric day number) of the year, adjusted for leap year. Return a number 1 through 365 (366 in leap years).
  
- @return {Number} 1 through 365 (366 in leap years)
+ ====Parameters====
+
+ None
+
+ ====Return Value====
+
+ {`Number`} 1 through 365 (366 in leap years)
+
+ ====Examples==== 
 {{{
 Date.today().getOrdinalNumber(); // 46
 }}}
 
-
-*hasDaylightSavingTime* ( ) : `Boolean`
+.
+==http://www.datejs.com/images/function.gif hasDaylightSavingTime ( ) : `Boolean`==
 
  Indicates whether Daylight Saving Time is observed in the current time zone.
  
- @return {Boolean} true|false
+ ====Parameters====
+
+ None
+
+ ====Return Value====
+
+ {`Boolean`} true|false
+
+ ====Examples==== 
 {{{
 Date.today().hasDaylightSavingTime(); // true|false
 }}}
 
-
-*isDaylightSavingTime* ( ) : `Boolean`
+.
+==http://www.datejs.com/images/function.gif isDaylightSavingTime ( ) : `Boolean`==
 
  Indicates whether this Date instance is within the Daylight Saving Time range for the current time zone.
  
- @return {Boolean} true|false
+ ====Parameters====
+
+ None
+
+ ====Return Value====
+
+ {`Boolean`} true|false
+
+ ====Examples==== 
 {{{
 Date.today().isDaylightSavingTime(); // true|false
 }}}
 
-
-*moveToDayOfWeek* ( `Number` dayOfWeek, `Number` direction ) : `Date`
+.
+==http://www.datejs.com/images/function.gif moveToDayOfWeek ( `Number` dayOfWeek, `Number` direction ) : `Date`==
 
  Move to the next or previous dayOfWeek. Whether to move into the future (+1) or past (-1) is controlled by the optional direction parameter.
+ 
+ ====Parameters====
 
- @param {Number}   The dayOfWeek to move to
- @param {Number}   Forward (+1) or Back (-1). Defaults to +1. [Optional]
- @return {Date}    this
+  * {`Number` dayOfWeek}   The dayOfWeek to move to
+  * {`Number` direction}   Forward (+1) or Back (-1). Defaults to +1. *optional*
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().moveToDayOfWeek(0);     // move to next Sunday
 Date.today().moveToDayOfWeek(0, -1); // move to last Sunday
 }}}
 
-
-*moveToFirstDayOfMonth* (  ) : `Date`
+.
+==http://www.datejs.com/images/function.gif moveToFirstDayOfMonth (  ) : `Date`==
 
  Moves the date to the first day of the month.
+ 
+ ====Parameters====
 
- @return {Date}    this
+ None
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 new Date(2007, 10, 19).moveToFirstDayOfMonth(); // 1-Nov-2007
 }}}
 
-
-*moveToLastDayOfMonth* (  ) : `Date`
+.
+==http://www.datejs.com/images/function.gif moveToLastDayOfMonth (  ) : `Date`==
 
  Moves the date to the last day of the month.
  
- @return {Date}    this
+ ====Parameters====
+
+ None
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 new Date(2007, 10, 19).moveToLastDayOfMonth(); // 30-Nov-2007
 }}}
 
-
-*moveToMonth* ( `Number` month, `Number` direction ) : `Date`
+.
+==http://www.datejs.com/images/function.gif moveToMonth ( `Number` month, `Number` direction ) : `Date`==
 
  Move to the next or previous month. Whether to move into the future (+1) or past (-1) is controlled by the optional direction parameter.
+ 
+ ====Parameters====
 
- @param {Number}   The month to move to. 0 = January, 11 = December
- @param {Number}   Forward (+1) or Back (-1). Defaults to +1. [Optional]
- @return {Date}    this
+  * {`Number` month}   The month to move to. 0 = January, 11 = December
+  * {`Number` direction}   Forward (+1) or Back (-1). Defaults to +1. *optional*
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().moveToMonth(0);     // move to next January
 Date.today().moveToMonth(0, -1); // move to last January
 }}}
 
-
-*moveToNthOccurrence* ( `Number` dayOfWeek, `Number` occurrence ) : `Date`
+.
+==http://www.datejs.com/images/function.gif moveToNthOccurrence ( `Number` dayOfWeek, `Number` occurrence ) : `Date`==
 
  Moves the date to the next n'th occurrence of the dayOfWeek starting from the beginning of the month. The number (-1) is a magic number and will return the last occurrence of the dayOfWeek in the month.
+ 
+ ====Parameters====
 
- @param {Number}   The dayOfWeek to move to
- @param {Number}   The n'th occurrence to move to. Use (-1) to return the last occurrence in the month
- @return {Date}    this
+  * {`Number` dayOfWeek}   The dayOfWeek to move to
+  * {`Number` occurrence}   The n'th occurrence to move to. Use (-1) to return the last occurrence in the month
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().moveToNthOccurrence(0, 1);     // First Sunday of the month
 Date.today().moveToNthOccurrence(0, 3);     // Third Sunday of the month
 Date.today().moveToNthOccurrence(0, -1);    // Last Sunday of the month
 }}}
 
-*set* ( `Object` object ) : `Date`
+.
+==http://www.datejs.com/images/function.gif set ( `Object` config ) : `Date`==
 
  Set the value of year, month, day, hour, minute, second, millisecond of date instance using given configuration object.
+ 
+ ====Parameters====
 
- @param {Object}   Configuration object containing attributes (month, day, etc.)
- @return {Date}    this
+  * {`Object` config}   Configuration object containing attributes (month, day, etc.)
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
 Date.today().set({ day: 15, hour: 8 }); // Sets the day to the 15th day of the current month and the hour to 8 (AM).
 }}}
- The following details all the options for .set().
+
+ The following list all property options for .set().
+ 
+ ====Examples==== 
 {{{
 // returns Jul 15 2008 18:45:30
 Date.today().set({
@@ -661,44 +1024,79 @@ var config = {millisecond: 500, second: 30, minute: 45, hour: 18, day: 15, month
 Date.today().set(config);
 }}}
 
+.
+==http://www.datejs.com/images/function.gif setTimezone ( `String` timezoneAbbreviation ) : `Date`==
 
-*setTimezone* ( `String` timezoneAbbreviation ) : `Date`
-
- Set the timezone for the current date using a [CultureInfo culture-specific] timezone abbreviation (ex: 'PST'). Note that in most !JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
+ Set the timezone for the current date using a [CultureInfo culture-specific] timezone abbreviation ("PST"). Note that in most !JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
  
- @return {Date}    this
+ ====Parameters====
+
+  * {`String` timezoneAbbreviation}   The timezone abbreviation.
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
+Date.today().setTimezone("PST");
 }}}
 
+.
+==http://www.datejs.com/images/function.gif setTimezoneOffset ( `Number` timezoneOffset ) : `Date`==
 
-*setTimezoneOffset* ( `Number` timezoneOffset ) : `Date`
-
- Set the timezone for the current date using an offset (ex: '-0700'). Note that in most !JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
+ Set the timezone for the current date using an offset (-0700). Note that in most !JavaScript implementations, this will appear to change the time since the timezone is always based on the locale.
  
- @return {Date}    this
+ ====Parameters====
+
+  * {`Number` timezoneOffset}   The timezone offset
+
+ ====Return Value====
+
+ {`Date`}    this
+
+ ====Examples==== 
 {{{
+Date.today().setTimezoneOffset(-0700);
 }}}
 
-*toISOString* ( ) : `String`
+.
+==http://www.datejs.com/images/function.gif toISOString ( ) : `String`==
 
  Converts the current date instance into a string with an ISO 8601 format. The date is converted to it's UTC value. As per the ISO 8601 specification, the string will be wrapped with double quotation marks (").
  
- @return {String}  ISO 8601 string of date
+ ====Parameters====
+
+ None
+
+ ====Return Value====
+
+ {`String`}  ISO 8601 string of date
+
+ ====Examples==== 
 {{{
 new Date().toISOString();  // ""2008-04-13T10:07:15Z""
 }}}
  
  The local time version of ISO 8601 formatted string can be created by passing a custom format to the .toString() function.
+ 
+ ====Examples==== 
 {{{
 new Date().toString("yyyy-MM-ddTHH:mm:ssZ");  // "2008-04-13T04:11:05Z"
 }}}
 
-*toString* ( `String` format ) : `String`
+.
+==http://www.datejs.com/images/function.gif toString ( `String` format ) : `String`==
 
  Converts the value of the current Date object to its equivalent string representation. Use format argument to specify format (optional). See FormatSpecifiers for more info.
  
- @param {String}   A format string consisting of one or more format spcifiers [Optional].
- @return {String}  A string representation of the current Date object.
+ ====Parameters====
+
+  * {`String` format}   A format string consisting of one or more format spcifiers. *optional*
+
+ ====Return Value====
+
+ {`String`}  A string representation of the current Date object.
+ ====Examples==== 
 {{{
 Date.today().toString();           // native .toString() functionality
 Date.today().toString("M/d/yyyy"); // 19-Nov-2007
