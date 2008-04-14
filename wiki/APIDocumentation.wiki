@@ -2,26 +2,40 @@
 #labels Featured
 
 = Public Static Methods =
+----
 
-*Date.today* () : `Date`
+==*Date.today* () : `Date`==
 
- Gets a date that is set to the current date. The time is set to the start of the day (00:00 or 12:00 AM).
- 
- @return {Date}    The current date.
+Gets a date that is set to the current date. The time is set to the start of the day (00:00 or 12:00 AM).
+
+*Parameters*
+
+ None
+
+*Return Value*
+
+ {`Date`}    The current date.
+
+*Examples*
 {{{
 Date.today(); // Equivalent to new Date().clearTime()
 }}}
 
 
-*Date.compare* ( `Date` date1, `Date` date2 ) : `Number`
+==*Date.compare* ( `Date` date1, `Date` date2 ) : `Number`==
 
- Compares the first date to the second date and returns an number indication of their relative values. -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
+Compares the first date to the second date and returns an number indication of their relative values. -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
 
- @param {Date}     First Date object to compare. *required*
+*Parameters*
 
- @param {Date}     Second Date object to compare to. *required*
+  * {`Date` date1}     First Date object to compare. *required*
+  * {`Date` date2}     Second Date object to compare to. *required*
 
- @return {Number}  -1 = date1 is lessthan date2. 0 = values are equal. 1 = date1 is greaterthan date2.
+*Return Value*
+
+ {`Number`}  -1 = date1 is _lessthan_ date2. 0 = values are _equal_. 1 = date1 is _greaterthan_ date2.
+
+*Examples*
 {{{
 var today = Date.today();
 var past = Date.today().add(-6).days();
@@ -34,13 +48,19 @@ Date.compare(today, past)                       // 1
 }}}
 
 
-*Date.equals* ( `Date` date1, `Date` date2 ) : `Boolean`
+==*Date.equals* ( `Date` date1, `Date` date2 ) : `Boolean`==
 
- Compares the first Date object to the second Date object and returns true if they are equal.
- 
- @param {Date}     First Date object to compare [required]
- @param {Date}     Second Date object to compare to [required]
- @return {Boolean} true if dates are equal. false if they are not equal.
+Compares the first Date object to the second Date object and returns true if they are equal.
+
+*Parameters* 
+
+  * {`Date` date1}     First Date object to compare. *required*
+  * {`Date` date2}     Second Date object to compare to *required*
+
+*Return Value*
+ {`Boolean`} true if dates are equal. false if they are not equal.
+
+*Examples*
 {{{
 Date.equals(Date.today(), new Date().clearTime());   // true
 
