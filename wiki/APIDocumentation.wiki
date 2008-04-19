@@ -82,7 +82,7 @@ Date.equals(d1, d4);  // throws exception
  
  ====Parameters====
 
-  * {`String` dayName}   The name of the month (eg. "February, "Feb", "october", "oct").
+  * {`String` dayName}     The name of the day (eg. "Monday, "Mon", "tuesday", "tue", "We", "we").
  
  ====Return Value====
 
@@ -92,6 +92,7 @@ Date.equals(d1, d4);  // throws exception
 {{{
 Date.getDayNumberFromName('Tuesday'); // 2
 Date.getDayNumberFromName('sat');     // 6
+Date.getDayNumberFromName('SUNDAY');     // 0
 }}}
 
 .
@@ -101,16 +102,18 @@ Date.getDayNumberFromName('sat');     // 6
  
  ====Parameters====
 
-  * {`String` monthName}   The name of the day (eg. "Monday, "Mon", "tuesday", "tue", "We", "we").
+  * {`String` monthName}   The name of the month (eg. "February, "Feb", "october", "oct").
  
  ====Return Value====
 
- {`Number`}  The day number
+ {`Number`}  The month number
 
  ====Examples==== 
 {{{
-Date.getMonthNumberFromName('July'); // 6
+Date.getMonthNumberFromName('January'); // 0
 Date.getMonthNumberFromName('feb');  // 1
+Date.getMonthNumberFromName('July'); // 6
+Date.getMonthNumberFromName('DECEMBER'); // 11
 }}}
 
 .
