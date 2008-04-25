@@ -649,9 +649,8 @@ Date.today().isBefore(); // true
 }}}
 
  ====See Also====
-  [APIDocumentation#isBefore isBefore]
-  
-  [APIDocumentation#isLeapYear Date.isLeapYear]
+ * [APIDocumentation#isBefore isBefore]
+ * [APIDocumentation#isLeapYear Date.isLeapYear]
 
 .
 ==http://www.datejs.com/images/function.gif isBefore==
