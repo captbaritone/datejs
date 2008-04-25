@@ -495,7 +495,8 @@ Date.today().addHours(-6);
 }}}
 
 .
-==http://www.datejs.com/images/function.gif addDays== ==( `Number` days ) : `Date`==
+==http://www.datejs.com/images/function.gif addDays== 
+ ===addDays ( `Number` days ) : `Date`===
 
  Adds the specified number of days to this instance.  The number can be positive or negative.
  
