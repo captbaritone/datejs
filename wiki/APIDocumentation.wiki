@@ -495,7 +495,7 @@ Date.today().addHours(-6);
 }}}
 
 .
-==http://www.datejs.com/images/function.gif addDays ( `Number` days ) : `Date`==
+==http://www.datejs.com/images/function.gif addDays== ==( `Number` days ) : `Date`==
 
  Adds the specified number of days to this instance.  The number can be positive or negative.
  
@@ -589,6 +589,62 @@ Date.today().addYears(-10);
 var past = new Date(2000, 4, 5);
 var future = new Date(2010, 11, 25)
 Date.today().between(past, future); // true|false
+}}}
+
+.
+==http://www.datejs.com/images/function.gif isAfter ( `Date` date ) : `Boolean`==
+
+ Determines if this date occurs after the date to compare to.
+ 
+ ====Parameters====
+
+  * {`Date` date}     Date object to compare. If no date to compare, new Date() ("now") is used.
+
+ ====Return Value====
+
+ {`Boolean`} true if this date instance is greater than the date to compare to (or "now"), otherwise false.
+
+ ====Examples==== 
+{{{
+var tomorrow = new Date().add(1).day();	
+Date.today().isAfter(tomorrow); // false
+Date.today().isBefore(tomorrow); // true
+
+var yesterday = new Date().add(-1).day();
+Date.today().isAfter(yesterday); // true
+Date.today().isBefore(yesterday); // false
+
+// No date to compare to...	
+Date.today().isAfter(); // false
+Date.today().isBefore(); // true
+}}}
+
+.
+==http://www.datejs.com/images/function.gif isBefore ( `Date` date ) : `Boolean`==
+
+ Determines if this date occurs before the date to compare to.
+ 
+ ====Parameters====
+
+  * {`Date` date}     Date object to compare. If no date to compare, new Date() ("now") is used.
+
+ ====Return Value====
+
+ {`Boolean`} true if this date instance is greater than the date to compare to (or "now"), otherwise false.
+
+ ====Examples==== 
+{{{
+var tomorrow = new Date().add(1).day();	
+Date.today().isAfter(tomorrow); // false
+Date.today().isBefore(tomorrow); // true
+
+var yesterday = new Date().add(-1).day();
+Date.today().isAfter(yesterday); // true
+Date.today().isBefore(yesterday); // false
+
+// No date to compare to...	
+Date.today().isAfter(); // false
+Date.today().isBefore(); // true
 }}}
 
 .
