@@ -17,7 +17,7 @@
 
  {`Date`}    The current date.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today(); // Equivalent to new Date().clearTime()
 }}}
@@ -37,7 +37,7 @@ Date.today(); // Equivalent to new Date().clearTime()
 
  {`Number`}  -1 = date1 is _lessthan_ date2. 0 = values are _equal_. 1 = date1 is _greaterthan_ date2.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 var today = Date.today();
 var past = Date.today().add(-6).days();
@@ -64,7 +64,7 @@ Date.compare(today, past)                       // 1
  
  {`Boolean`} true if dates are equal. false if they are not equal.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.equals(Date.today(), new Date().clearTime());   // true
 
@@ -92,7 +92,7 @@ Date.equals(d1, d4);  // throws exception
 
  {`Number`}  The day number
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.getDayNumberFromName('Tuesday'); // 2
 Date.getDayNumberFromName('sat');     // 6
@@ -113,7 +113,7 @@ Date.getDayNumberFromName('SUNDAY');     // 0
 
  {`Number`}  The month number
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.getMonthNumberFromName('January'); // 0
 Date.getMonthNumberFromName('feb');  // 1
@@ -135,7 +135,7 @@ Date.getMonthNumberFromName('DECEMBER'); // 11
 
  {`Boolean`} true if date is within a LeapYear, otherwise false.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.isLeapYear(Date.today().getFullYear()); // true|false
 var date = new Date(2008,1,29);
@@ -157,7 +157,7 @@ Date.isLeapYear(date.getFullYear);           // true
 
  {`Number`}  The number of days in the month.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.getDaysInMonth(2008, 1);  // 29
 Date.getDaysInMonth(2007, 10); // 30
@@ -178,7 +178,7 @@ Date.getDaysInMonth(2007, 10); // 30
 
  {`String`}  The timezone abbreviation
 
- ====Examples==== 
+ ====Example==== 
 {{{
 var today = Date.today();
 Date.getTimezoneAbbreviation(today.getTimezoneOffset, today.isDayLightSavingsTime()); // "UTC", "GMT", "EST", "PDT", etc.
@@ -199,7 +199,7 @@ Date.getTimezoneAbbreviation(today.getTimezoneOffset, today.isDayLightSavingsTim
 
  {`String`}  The timezone abbreviation
   
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.getTimezoneOffset("PST", true);
 }}}
@@ -218,7 +218,7 @@ Date.getTimezoneOffset("PST", true);
 
  {`Date`}    A Date object or null if the string cannot be converted into a Date.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.parse("today")
 Date.parse("t + 5 d") // today + 5 days
@@ -242,7 +242,7 @@ Date.parse("Thu, 1 July 2004 22:30:00?)
 
  {`Date`}    A Date object or null if the string cannot be converted into a Date.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.parseExact("10/15/2004", "M/d/yyyy");  // The Date of 15-Oct-2004
 Date.parse("15-Oct-2004", "M-ddd-yyyy");    // The Date of 15-Oct-2004
@@ -266,7 +266,7 @@ Date.parseExact("10/15/2004", ["M/d/yyyy", "MMMM d, yyyy"]); // The Date of 15-O
 
  {`Boolean`} true if within range, otherwise false.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.validateDay(15, 2007, 1);  // true, 15-Feb-2007
 Date.validateDay(31, 2007, 10); // false, throws RangeError exception
@@ -286,7 +286,7 @@ Date.validateDay(31, 2007, 10); // false, throws RangeError exception
 
  {`Boolean`} true if within range, otherwise false.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.validateHour(15); // true
 Date.validateHour(24); // false, throws RangeError exception
@@ -306,7 +306,7 @@ Date.validateHour(24); // false, throws RangeError exception
 
  {`Boolean`} true if within range, otherwise false.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.validateMillisecond(500); // true
 }}}
@@ -325,7 +325,7 @@ Date.validateMillisecond(500); // true
 
  {`Boolean`} true if within range, otherwise false.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.validateMinute(45); // true
 Date.validateMinute(60); // false, throws RangeError exception
@@ -345,7 +345,7 @@ Date.validateMinute(60); // false, throws RangeError exception
 
  {`Boolean`} true if within range, otherwise false.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.validateMonth(0);  // true, "January"
 Date.validateMonth(12); // false, throws RangeError exception
@@ -365,7 +365,7 @@ Date.validateMonth(12); // false, throws RangeError exception
 
  {`Boolean`} true if within range, otherwise false.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.validateSecond(15); // true
 Date.validateSecond(60); // false, throws RangeError exception
@@ -385,7 +385,7 @@ Date.validateSecond(60); // false, throws RangeError exception
 
  {`Boolean`} true if within range, otherwise false.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.validateYear(2007); // true
 }}}
@@ -408,7 +408,7 @@ Date.validateYear(2007); // true
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().add({ days: 5, months: 1 });
 new Date().add({ years: -1, hours: -6 });
@@ -416,7 +416,7 @@ new Date().add({ years: -1, hours: -6 });
  
  The following details all the options for .add().
  
- ====Examples==== 
+ ====Example==== 
 {{{
 // returns Jul 26 2009 18:45:30 given today as 11-Jan-2008
 Date.today().add({
@@ -451,7 +451,7 @@ Date.today().add(config);
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().addMilliseconds(500);
 Date.today().addMilliseconds(-500);
@@ -471,7 +471,7 @@ Date.today().addMilliseconds(-500);
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().addSeconds(30);
 Date.today().addSeconds(-30);
@@ -491,7 +491,7 @@ Date.today().addSeconds(-30);
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().addMinutes(45);
 Date.today().addMinutes(-45);
@@ -511,7 +511,7 @@ Date.today().addMinutes(-45);
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().addHours(6);
 Date.today().addHours(-6);
@@ -531,7 +531,7 @@ Date.today().addHours(-6);
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().addDays(1);
 Date.today().addDays(-1);
@@ -551,7 +551,7 @@ Date.today().addDays(-1);
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().addWeeks(1);
 Date.today().addWeeks(-1);
@@ -571,7 +571,7 @@ Date.today().addWeeks(-1);
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().addMonths(6);
 Date.today().addMonths(-6);
@@ -591,7 +591,7 @@ Date.today().addMonths(-6);
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().addYears(10);
 Date.today().addYears(-10);
@@ -612,7 +612,7 @@ Date.today().addYears(-10);
 
  {`Boolean`} true is this is between or equal to the start and end dates, else false
 
- ====Examples==== 
+ ====Example==== 
 {{{
 var past = new Date(2000, 4, 5);
 var future = new Date(2010, 11, 25)
@@ -633,7 +633,7 @@ Date.today().between(past, future); // true|false
 
  {`Boolean`} true if this date instance is greater than the date to compare to (or "now"), otherwise false.
 
- ====Examples==== 
+ ====Example==== 
 {{{
 var tomorrow = new Date().add(1).day();	
 Date.today().isAfter(tomorrow); // false
@@ -647,6 +647,9 @@ Date.today().isBefore(yesterday); // false
 Date.today().isAfter(); // false
 Date.today().isBefore(); // true
 }}}
+
+ ====See Also====
+ [APIDocumentation#isBefore]
 
 .
 ==http://www.datejs.com/images/function.gif isBefore==
@@ -662,7 +665,7 @@ Date.today().isBefore(); // true
 
  {`Boolean`} true if this date instance is greater than the date to compare to (or "now"), otherwise false.
 
- ====Examples==== 
+ ====Example==== 
 {{{
 var tomorrow = new Date().add(1).day();	
 Date.today().isAfter(tomorrow); // false
@@ -691,7 +694,7 @@ Date.today().isBefore(); // true
 
  {`Date`}    this 
 
- ====Examples==== 
+ ====Example==== 
 {{{
 new Date().clearTime(); // same as Date.today()
 }}}
@@ -710,7 +713,7 @@ new Date().clearTime(); // same as Date.today()
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().setTimeToNow();
 }}}
@@ -729,7 +732,7 @@ Date.today().setTimeToNow();
 
  {`Date`}    A new Date instance
 
- ====Examples==== 
+ ====Example==== 
 {{{
 // Wrong way
 var d1 = new Date(2007, 0, 1); // 1-Jan-2007
@@ -762,7 +765,7 @@ console.log(d2); // 7-Jan-2007
 
  {`Number`}  -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 var past = Date.today().add(-6).days();
 var future = Date.today().add(6).days();
@@ -786,7 +789,7 @@ Date.today().compareTo(past);                   // 1
 
  {`Boolean`} true if dates are equal. false if they are not equal.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().compareTo(new Date().clearTime()); // true
 
@@ -809,7 +812,7 @@ d1.equals(d2); // false
 
  {`Number`} 1 through 365 (366 in leap years)
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().getDayOfYear();         // 323
 new Date(2000, 0, 1).getDayOfYear(); // 1
@@ -829,7 +832,7 @@ new Date(2000, 0, 1).getDayOfYear(); // 1
 
  {`String`} The abbreviated time zone name (e.g. "EST")
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().getTimezone();
 }}}
@@ -848,7 +851,7 @@ Date.today().getTimezone();
 
  {`String`} The 4-character offset string prefixed with + or - (e.g. "-0500")
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().getUTCOffset(); // "-0600"
 }}}
@@ -869,7 +872,7 @@ Date.today().getUTCOffset(); // "-0600"
 
  {`Number`}  1 to 53
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().getWeek(); // 7
 }}}
@@ -890,7 +893,7 @@ Date.today().getWeek(); // 7
 
  {`String`}  "01" to "53"
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().getISOWeek(); // "07"
 }}}
@@ -909,7 +912,7 @@ Date.today().getISOWeek(); // "07"
 
  {`Number`} The diff in milliseconds
 
- ====Examples==== 
+ ====Example==== 
 {{{
 new Date().getElapsed(Date.today()); //-17178828
 }}}
@@ -928,7 +931,7 @@ new Date().getElapsed(Date.today()); //-17178828
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().setWeek(7); // Returns a Date set to the Monday of the week specified
 }}}
@@ -947,7 +950,7 @@ Date.today().setWeek(7); // Returns a Date set to the Monday of the week specifi
 
  {`Number`} 1 through 365 (366 in leap years)
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().getOrdinalNumber(); // 46
 }}}
@@ -966,7 +969,7 @@ Date.today().getOrdinalNumber(); // 46
 
  {`Boolean`} true|false
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().hasDaylightSavingTime(); // true|false
 }}}
@@ -985,7 +988,7 @@ Date.today().hasDaylightSavingTime(); // true|false
 
  {`Boolean`} true|false
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().isDaylightSavingTime(); // true|false
 }}}
@@ -1005,7 +1008,7 @@ Date.today().isDaylightSavingTime(); // true|false
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().moveToDayOfWeek(0);     // move to next Sunday
 Date.today().moveToDayOfWeek(0, -1); // move to last Sunday
@@ -1025,7 +1028,7 @@ Date.today().moveToDayOfWeek(0, -1); // move to last Sunday
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 new Date(2007, 10, 19).moveToFirstDayOfMonth(); // 1-Nov-2007
 }}}
@@ -1044,7 +1047,7 @@ new Date(2007, 10, 19).moveToFirstDayOfMonth(); // 1-Nov-2007
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 new Date(2007, 10, 19).moveToLastDayOfMonth(); // 30-Nov-2007
 }}}
@@ -1064,7 +1067,7 @@ new Date(2007, 10, 19).moveToLastDayOfMonth(); // 30-Nov-2007
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().moveToMonth(0);     // move to next January
 Date.today().moveToMonth(0, -1); // move to last January
@@ -1085,7 +1088,7 @@ Date.today().moveToMonth(0, -1); // move to last January
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().moveToNthOccurrence(0, 1);     // First Sunday of the month
 Date.today().moveToNthOccurrence(0, 3);     // Third Sunday of the month
@@ -1106,14 +1109,14 @@ Date.today().moveToNthOccurrence(0, -1);    // Last Sunday of the month
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().set({ day: 15, hour: 8 }); // Sets the day to the 15th day of the current month and the hour to 8 (AM).
 }}}
 
  The following list all property options for .set().
  
- ====Examples==== 
+ ====Example==== 
 {{{
 // returns Jul 15 2008 18:45:30
 Date.today().set({
@@ -1147,7 +1150,7 @@ Date.today().set(config);
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().setTimezone("PST");
 }}}
@@ -1166,7 +1169,7 @@ Date.today().setTimezone("PST");
 
  {`Date`}    this
 
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().setTimezoneOffset(-0700);
 }}}
@@ -1185,14 +1188,14 @@ Date.today().setTimezoneOffset(-0700);
 
  {`String`}  ISO 8601 string of date
 
- ====Examples==== 
+ ====Example==== 
 {{{
 new Date().toISOString();  // ""2008-04-13T10:07:15Z""
 }}}
  
  The local time version of ISO 8601 formatted string can be created by passing a custom format to the .toString() function.
  
- ====Examples==== 
+ ====Example==== 
 {{{
 new Date().toString("yyyy-MM-ddTHH:mm:ssZ");  // "2008-04-13T04:11:05Z"
 }}}
@@ -1210,7 +1213,7 @@ new Date().toString("yyyy-MM-ddTHH:mm:ssZ");  // "2008-04-13T04:11:05Z"
  ====Return Value====
 
  {`String`}  A string representation of the current Date object.
- ====Examples==== 
+ ====Example==== 
 {{{
 Date.today().toString();           // native .toString() functionality
 Date.today().toString("M/d/yyyy"); // 19-Nov-2007
