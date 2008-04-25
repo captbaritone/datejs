@@ -49,6 +49,13 @@ Date.compare(today, new Date().clearTime());    // 0
 Date.compare(today, past)                       // 1
 }}}
 
+ ====See Also====
+ * [APIDocumentation#between between]
+ * [APIDocumentation#compareTo compareTo]
+ * [APIDocumentation#equals equals]
+ * [APIDocumentation#isAfter isAfter]
+ * [APIDocumentation#isBefore isBefore]
+ 
 .
 ==http://www.datejs.com/images/function.gif equals==
  ===Date.equals ( `Date` date1, `Date` date2 ) : `Boolean`===
