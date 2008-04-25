@@ -4,7 +4,8 @@
 = Public Static Methods =
 ----
 
-==http://www.datejs.com/images/function.gif Date.today () : `Date`==
+==http://www.datejs.com/images/function.gif Date.today==
+ ===Date.today () : `Date`===
 
  Gets a date that is set to the current date. The time is set to the start of the day (00:00 or 12:00 AM).
  
@@ -22,7 +23,8 @@ Date.today(); // Equivalent to new Date().clearTime()
 }}}
 
 .
-==http://www.datejs.com/images/function.gif Date.compare ( `Date` date1, `Date` date2 ) : `Number`==
+==http://www.datejs.com/images/function.gif Date.compare==
+ ===Date.compare ( `Date` date1, `Date` date2 ) : `Number`===
 
  Compares the first date to the second date and returns an number indication of their relative values. -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
  
@@ -48,7 +50,8 @@ Date.compare(today, past)                       // 1
 }}}
 
 .
-==http://www.datejs.com/images/function.gif Date.equals ( `Date` date1, `Date` date2 ) : `Boolean`==
+==http://www.datejs.com/images/function.gif Date.equals==
+ ===Date.equals ( `Date` date1, `Date` date2 ) : `Boolean`===
 
  Compares the first Date object to the second Date object and returns true if they are equal.
  
@@ -76,7 +79,8 @@ Date.equals(d1, d4);  // throws exception
 }}}
 
 .
-==http://www.datejs.com/images/function.gif Date.getDayNumberFromName ( `String` dayName ) : `Number`==
+==http://www.datejs.com/images/function.gif Date.getDayNumberFromName==
+ ===Date.getDayNumberFromName ( `String` dayName ) : `Number`===
 
  Gets the day number (0-6) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated day name.
  
@@ -96,7 +100,8 @@ Date.getDayNumberFromName('SUNDAY');     // 0
 }}}
 
 .
-==http://www.datejs.com/images/function.gif Date.getMonthNumberFromName ( `String` monthName ) : `Number`==
+==http://www.datejs.com/images/function.gif Date.getMonthNumberFromName==
+ ===Date.getMonthNumberFromName ( `String` monthName ) : `Number`===
 
  Gets the month number (0-11) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated month name.
  
@@ -117,7 +122,8 @@ Date.getMonthNumberFromName('DECEMBER'); // 11
 }}}
 
 .
-==http://www.datejs.com/images/function.gif Date.isLeapYear ( `Number` year ) : `Boolean`==
+==http://www.datejs.com/images/function.gif Date.isLeapYear==
+ ===Date.isLeapYear ( `Number` year ) : `Boolean`===
 
  Returns true if the given year is a leap year, false otherwise.
  
@@ -137,7 +143,8 @@ Date.isLeapYear(date.getFullYear);           // true
 }}}
 
 .
-==http://www.datejs.com/images/function.gif Date.getDaysInMonth ( `Number` year, `Number` month ) : `Number`==
+==http://www.datejs.com/images/function.gif Date.getDaysInMonth==
+ ===Date.getDaysInMonth ( `Number` year, `Number` month ) : `Number`===
 
  Gets the number of days in the month, given a year and month value. Automatically corrects for leap year.
  
