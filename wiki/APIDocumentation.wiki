@@ -437,6 +437,9 @@ var config = {milliseconds: 500, seconds: 30, minutes: 45, hours: 18, days: 15, 
 Date.today().add(config);
 }}}
 
+ ====See Also====
+ * [APIDocumentation#set set]
+
 .
 ==http://www.datejs.com/images/function.gif addMilliseconds==
  ===.addMilliseconds ( `Number` milliseconds ) : `Date`===
@@ -598,90 +601,6 @@ Date.today().addYears(-10);
 }}}
 
 .
-==http://www.datejs.com/images/function.gif between==
- ===.between ( `Date` startDate, `Date` endDate ) : `Boolean`===
-
- Determines if this instance is between a range of two dates or equal to either the start or end dates.
- 
- ====Parameters====
-
-  * {`Date` startDate}     Start of range. *required*
-  * {`Date` endDate}     End of range. *required*
-
- ====Return Value====
-
- {`Boolean`} true is this is between or equal to the start and end dates, else false
-
- ====Example==== 
-{{{
-var past = new Date(2000, 4, 5);
-var future = new Date(2010, 11, 25)
-Date.today().between(past, future); // true|false
-}}}
-
-.
-==http://www.datejs.com/images/function.gif isAfter==
- ===.isAfter ( `Date` date ) : `Boolean`===
-
- Determines if this date occurs after the date to compare to.
- 
- ====Parameters====
-
-  * {`Date` date}     Date object to compare. If no date to compare, new Date() ("now") is used.
-
- ====Return Value====
-
- {`Boolean`} true if this date instance is greater than the date to compare to (or "now"), otherwise false.
-
- ====Example==== 
-{{{
-var tomorrow = new Date().add(1).day();	
-Date.today().isAfter(tomorrow); // false
-Date.today().isBefore(tomorrow); // true
-
-var yesterday = new Date().add(-1).day();
-Date.today().isAfter(yesterday); // true
-Date.today().isBefore(yesterday); // false
-
-// No date to compare to...	
-Date.today().isAfter(); // false
-Date.today().isBefore(); // true
-}}}
-
- ====See Also====
- * [APIDocumentation#isBefore isBefore]
- * [APIDocumentation#isLeapYear Date.isLeapYear]
-
-.
-==http://www.datejs.com/images/function.gif isBefore==
- ===.isBefore ( `Date` date ) : `Boolean`===
-
- Determines if this date occurs before the date to compare to.
- 
- ====Parameters====
-
-  * {`Date` date}     Date object to compare. If no date to compare, new Date() ("now") is used.
-
- ====Return Value====
-
- {`Boolean`} true if this date instance is greater than the date to compare to (or "now"), otherwise false.
-
- ====Example==== 
-{{{
-var tomorrow = new Date().add(1).day();	
-Date.today().isAfter(tomorrow); // false
-Date.today().isBefore(tomorrow); // true
-
-var yesterday = new Date().add(-1).day();
-Date.today().isAfter(yesterday); // true
-Date.today().isBefore(yesterday); // false
-
-// No date to compare to...	
-Date.today().isAfter(); // false
-Date.today().isBefore(); // true
-}}}
-
-.
 ==http://www.datejs.com/images/function.gif clearTime==
  ===.clearTime (  ) : `Date`===
 
@@ -753,6 +672,34 @@ console.log(d2); // 7-Jan-2007
 }}}
 
 .
+==http://www.datejs.com/images/function.gif between==
+ ===.between ( `Date` startDate, `Date` endDate ) : `Boolean`===
+
+ Determines if this instance is between a range of two dates or equal to either the start or end dates.
+ 
+ ====Parameters====
+
+  * {`Date` startDate}     Start of range. *required*
+  * {`Date` endDate}     End of range. *required*
+
+ ====Return Value====
+
+ {`Boolean`} true is this is between or equal to the start and end dates, else false
+
+ ====Example==== 
+{{{
+var past = new Date(2000, 4, 5);
+var future = new Date(2010, 11, 25)
+Date.today().between(past, future); // true|false
+}}}
+
+ ====See Also====
+ * [APIDocumentation#compareTo compareTo]
+ * [APIDocumentation#equals equals]
+ * [APIDocumentation#isAfter isAfter]
+ * [APIDocumentation#isBefore isBefore]
+ 
+.
 ==http://www.datejs.com/images/function.gif compareTo==
  ===.compareTo ( `Date` date ) : `Number`===
 
@@ -776,6 +723,12 @@ Date.today().compareTo(new Date().clearTime()); // 0
 Date.today().compareTo(past);                   // 1
 }}}
 
+ ====See Also====
+ * [APIDocumentation#between between]
+ * [APIDocumentation#equals equals]
+ * [APIDocumentation#isAfter isAfter]
+ * [APIDocumentation#isBefore isBefore]
+
 .
 ==http://www.datejs.com/images/function.gif equals==
  ===.equals ( `Date` date ) : `Boolean`===
@@ -798,6 +751,82 @@ var d1 = Date.today();
 var d2 = Date.today().addHours(5);
 d1.equals(d2); // false
 }}}
+
+ ====See Also====
+ * [APIDocumentation#between between]
+ * [APIDocumentation#compareTo compareTo]
+ * [APIDocumentation#isAfter isAfter]
+ * [APIDocumentation#isBefore isBefore]
+
+.
+==http://www.datejs.com/images/function.gif isAfter==
+ ===.isAfter ( `Date` date ) : `Boolean`===
+
+ Determines if this date occurs after the date to compare to.
+ 
+ ====Parameters====
+
+  * {`Date` date}     Date object to compare. If no date to compare, new Date() ("now") is used.
+
+ ====Return Value====
+
+ {`Boolean`} true if this date instance is greater than the date to compare to (or "now"), otherwise false.
+
+ ====Example==== 
+{{{
+var tomorrow = new Date().add(1).day();	
+Date.today().isAfter(tomorrow); // false
+Date.today().isBefore(tomorrow); // true
+
+var yesterday = new Date().add(-1).day();
+Date.today().isAfter(yesterday); // true
+Date.today().isBefore(yesterday); // false
+
+// No date to compare to...	
+Date.today().isAfter(); // false
+Date.today().isBefore(); // true
+}}}
+
+ ====See Also====
+ * [APIDocumentation#between compareTo]
+ * [APIDocumentation#between between]
+ * [APIDocumentation#equals equals]
+ * [APIDocumentation#isBefore isBefore]
+
+.
+==http://www.datejs.com/images/function.gif isBefore==
+ ===.isBefore ( `Date` date ) : `Boolean`===
+
+ Determines if this date occurs before the date to compare to.
+ 
+ ====Parameters====
+
+  * {`Date` date}     Date object to compare. If no date to compare, new Date() ("now") is used.
+
+ ====Return Value====
+
+ {`Boolean`} true if this date instance is greater than the date to compare to (or "now"), otherwise false.
+
+ ====Example==== 
+{{{
+var tomorrow = new Date().add(1).day();	
+Date.today().isAfter(tomorrow); // false
+Date.today().isBefore(tomorrow); // true
+
+var yesterday = new Date().add(-1).day();
+Date.today().isAfter(yesterday); // true
+Date.today().isBefore(yesterday); // false
+
+// No date to compare to...	
+Date.today().isAfter(); // false
+Date.today().isBefore(); // true
+}}}
+
+ ====See Also====
+ * [APIDocumentation#between compareTo]
+ * [APIDocumentation#between between]
+ * [APIDocumentation#equals equals]
+ * [APIDocumentation#isAfter isAfter]
 
 .
 ==http://www.datejs.com/images/function.gif getOrdinalNumber==
@@ -878,6 +907,10 @@ Date.today().getUTCOffset(); // "-0600"
 Date.today().getWeek(); // 7
 }}}
 
+ ====See Also====
+ * [APIDocumentation#getISOWeek getISOWeek]
+ * [APIDocumentation#setWeek setWeek]
+
 .
 ==http://www.datejs.com/images/function.gif getISOWeek==
  ===.getISOWeek ( ) : `String`===
@@ -899,24 +932,10 @@ Date.today().getWeek(); // 7
 Date.today().getISOWeek(); // "07"
 }}}
 
-.
-==http://www.datejs.com/images/function.gif getElapsed==
- ===.getElapsed ( `Date` date ) : `Number`===
-
- Returns the number of milliseconds between this date and date.
- 
- ====Parameters====
-
-  * {`Date` date} Defaults to now
-
- ====Return Value====
-
- {`Number`} The diff in milliseconds
-
- ====Example==== 
-{{{
-new Date().getElapsed(Date.today()); //-17178828
-}}}
+ ====See Also====
+ * [APIDocumentation#getWeek getWeek]
+ * [APIDocumentation#setWeek setWeek]
+ * [APIDocumentation#toISOString toISOString]
 
 .
 ==http://www.datejs.com/images/function.gif setWeek==
@@ -935,6 +954,29 @@ new Date().getElapsed(Date.today()); //-17178828
  ====Example==== 
 {{{
 Date.today().setWeek(7); // Returns a Date set to the Monday of the week specified
+}}}
+
+ ====See Also====
+ * [APIDocumentation#getWeek getWeek]
+ * [APIDocumentation#getISOWeek getISOWeek]
+
+.
+==http://www.datejs.com/images/function.gif getElapsed==
+ ===.getElapsed ( `Date` date ) : `Number`===
+
+ Returns the number of milliseconds between this date and date.
+ 
+ ====Parameters====
+
+  * {`Date` date} Defaults to now
+
+ ====Return Value====
+
+ {`Number`} The diff in milliseconds
+
+ ====Example==== 
+{{{
+new Date().getElapsed(Date.today()); //-17178828
 }}}
 
 .
@@ -975,6 +1017,9 @@ Date.today().getOrdinalNumber(); // 46
 Date.today().hasDaylightSavingTime(); // true|false
 }}}
 
+ ====See Also====
+ * [APIDocumentation#isDaylightSavingTime isDaylightSavingTime]
+ 
 .
 ==http://www.datejs.com/images/function.gif isDaylightSavingTime==
  ===.isDaylightSavingTime ( ) : `Boolean`===
@@ -993,6 +1038,9 @@ Date.today().hasDaylightSavingTime(); // true|false
 {{{
 Date.today().isDaylightSavingTime(); // true|false
 }}}
+
+ ====See Also====
+ * [APIDocumentation#hasDaylightSavingTime hasDaylightSavingTime]
 
 .
 ==http://www.datejs.com/images/function.gif moveToDayOfWeek==
@@ -1201,6 +1249,9 @@ new Date().toISOString();  // ""2008-04-13T10:07:15Z""
 new Date().toString("yyyy-MM-ddTHH:mm:ssZ");  // "2008-04-13T04:11:05Z"
 }}}
 
+ ====See Also====
+ * [APIDocumentation#toString toString]
+ 
 .
 ==http://www.datejs.com/images/function.gif toString==
  ===.toString ( `String` format ) : `String`===
@@ -1220,3 +1271,6 @@ Date.today().toString();           // native .toString() functionality
 Date.today().toString("M/d/yyyy"); // 19-Nov-2007
 new Date().toString("HH:mm");      // 18:45
 }}}
+
+ ====See Also====
+ * [APIDocumentation#toISOString toISOString]
