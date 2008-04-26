@@ -85,6 +85,13 @@ Date.equals(d1, d3);  // true
 Date.equals(d1, d4);  // throws exception
 }}}
 
+ ====See Also====
+ * [APIDocumentation#between between]
+ * [APIDocumentation#compareTo compareTo]
+ * [APIDocumentation#equals equals]
+ * [APIDocumentation#isAfter isAfter]
+ * [APIDocumentation#isBefore isBefore]
+ 
 .
 ==http://www.datejs.com/images/function.gif getDayNumberFromName==
  ===Date.getDayNumberFromName ( `String` dayName ) : `Number`===
@@ -1192,6 +1199,9 @@ Date.today().set({millisecond: 500, second: 30, minute: 45, hour: 18, day: 15, m
 var config = {millisecond: 500, second: 30, minute: 45, hour: 18, day: 15, month: 6, year: 2008};
 Date.today().set(config);
 }}}
+
+ ====See Also====
+ * [APIDocumentation#add add]
 
 .
 ==http://www.datejs.com/images/function.gif setTimezone==
