@@ -975,25 +975,6 @@ Date.today().setWeek(7); // Returns a Date set to the Monday of the week specifi
  * [APIDocumentation#getISOWeek getISOWeek]
 
 .
-==http://www.datejs.com/images/function.gif getElapsed==
- ===.getElapsed ( `Date` date ) : `Number`===
-
- Returns the number of milliseconds between this date and date.
- 
- ====Parameters====
-
-  * {`Date` date} Defaults to now
-
- ====Return Value====
-
- {`Number`} The diff in milliseconds
-
- ====Example==== 
-{{{
-new Date().getElapsed(Date.today()); //-17178828
-}}}
-
-.
 ==http://www.datejs.com/images/function.gif getOrdinalNumber==
  ===.getOrdinalNumber ( ) : `Number`===
 
