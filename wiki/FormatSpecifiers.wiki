@@ -17,9 +17,9 @@
  
  {`String`}  A string representation of the current Date object.
  
- ====CUSTOM DATE AND TIME FORMAT SPECIFIERS====
+ The following Custom and Standard format specifier strings/characters are used with the `.toString(format)` function.
 
- The following format specifiers are used with the `.toString(format)` function. 
+ ====CUSTOM DATE AND TIME FORMAT SPECIFIERS====
 {{{
 Format  Description                                                                  Example
 ------  ---------------------------------------------------------------------------  -----------------------
@@ -37,27 +37,30 @@ Format  Description                                                             
  
  d      The day of the month between 1 and 31.                                       "1"  to "31"
  dd     The day of the month with leading zero if required.                          "01" to "31"
- ddd    Abbreviated day name. $C.abbreviatedDayNames.                                "Mon" to "Sun" 
- dddd   The full day name. $C.dayNames.                                              "Monday" to "Sunday"
+ ddd    Abbreviated day name. Date.CultureInfo.abbreviatedDayNames.                  "Mon" to "Sun" 
+ dddd   The full day name. Date.CultureInfo.dayNames.                                "Monday" to "Sunday"
  
  M      The month of the year between 1-12.                                          "1" to "12"
  MM     The month of the year with leading zero if required.                         "01" to "12"
- MMM    Abbreviated month name. $C.abbreviatedMonthNames.                            "Jan" to "Dec"
- MMMM   The full month name. $C.monthNames.                                          "January" to "December"
+ MMM    Abbreviated month name. Date.CultureInfo.abbreviatedMonthNames.              "Jan" to "Dec"
+ MMMM   The full month name. Date.CultureInfo.monthNames.                            "January" to "December"
 
  yy     The year as a two-digit number.                                              "99" or "08"
  yyyy   The full four digit year.                                                    "1999" or "2008"
  
  t      Displays the first character of the A.M./P.M. designator.                    "A" or "P"
-        $C.amDesignator or $C.pmDesignator
+        $C.amDesignator or Date.CultureInfo.pmDesignator
  tt     Displays the A.M./P.M. designator.                                           "AM" or "PM"
-        $C.amDesignator or $C.pmDesignator
+        $C.amDesignator or Date.CultureInfo.pmDesignator
  
  S      The ordinal suffix ("st, "nd", "rd" or "th") of the current day.            "st, "nd", "rd" or "th"
 }}}
 
 .
  ====STANDARD DATE AND TIME FORMAT SPECIFIERS====
+
+ A Standard format specifier for `.toString(format)` consists of a single character. If multiple characters are supplied, the string is treated as a Custom format specifier. 
+
 {{{
 Format  Description                                                                  Example ("en-US")
 ------  ---------------------------------------------------------------------------  -----------------------
