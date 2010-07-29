@@ -1267,7 +1267,7 @@ new Date().toString("yyyy-MM-ddTHH:mm:ssZ");  // "2008-04-13T04:11:05Z"
 {{{
 Date.today().toString();           // native .toString() functionality
 Date.today().toString("M/d/yyyy"); // 11/19/2007
-Date.today().toString("M-ddd-yyyy"); // 19-Nov-2007
+Date.today().toString("d-MMM-yyyy"); // 19-Nov-2007
 new Date().toString("HH:mm");      // 18:45
 }}}
 
