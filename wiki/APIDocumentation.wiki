@@ -259,7 +259,7 @@ Date.parse("Thu, 1 July 2004 22:30:00?)
  ====Example==== 
 {{{
 Date.parseExact("10/15/2004", "M/d/yyyy");  // The Date of 15-Oct-2004
-Date.parse("15-Oct-2004", "M-ddd-yyyy");    // The Date of 15-Oct-2004
+Date.parse("15-Oct-2004", "d-MMM-yyyy");    // The Date of 15-Oct-2004
 Date.parse("2004.10.15", "yyyy.MM.dd");     // The Date of 15-Oct-2004
 Date.parseExact("10/15/2004", ["M/d/yyyy", "MMMM d, yyyy"]); // The Date of 15-Oct-2004
 }}}
