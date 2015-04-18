@@ -1,7 +1,7 @@
-#labels Featured
-*NOTE:* [http://datejs.com/ DateJS] has moved to a new home on [http://github.com/datejs/ GitHub]
-
 #summary Date class and instance methods provided by the Datejs library.
+#labels Featured
+
+*NOTE:* [http://datejs.com/ DateJS] has moved to a new home on [http://github.com/datejs/ GitHub]
 
 =Public Static Methods=
 ----
