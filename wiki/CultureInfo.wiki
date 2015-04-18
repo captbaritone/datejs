@@ -1,3 +1,3 @@
 #summary Date.CultureInfo is used to globalize the Datejs library.
 
-This page is under construction.
+*NOTE:* [http://datejs.com/ DateJS] has moved to a new home on [http://github.com/datejs/ GitHub]
