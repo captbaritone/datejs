@@ -1,6 +1,8 @@
 #summary Format Specifiers are used to specify date formats for display and input.
 #labels Featured
 
+*NOTE:* [http://datejs.com/ DateJS] has moved to a new home on [http://github.com/datejs/ GitHub]
+
 =toString (available in `core.js`)=
 
 ----
