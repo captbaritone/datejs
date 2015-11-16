@@ -1,0 +1,248 @@
+version: 1.0 Alpha-1
+build date: 12-Nov-2007
+copyright: (c) 2006-2007, [http://www.coolite.com/ Coolite, Inc.]. All rights reserved.
+license: Licensed under [http://www.datejs.com/license/ The MIT License]. 
+class-methods:
+  - 
+    name: getMonthNumberFromName
+    arguments: [ monthName ] 
+    returns: monthNumber
+    description: |-
+      Gets the month number (0-11) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated month name.
+  - 
+    name: getDayNumberFromName
+    arguments: [ dayName ]
+    returns: dayNumber
+    description: |-
+      Gets the day number (0-6) if given a [CultureInfo culture-specific] string which is a valid full or abbreviated day name.
+  -
+    name: isLeapYear
+    arguments: [ year ]
+    returns: true or false
+    description: |-
+      Returns true if the given year is a leap year, false otherwise.
+  -
+    name: getDaysInMonth
+    arguments: [ year, month ]
+    returns: number of days
+    description: |-
+      Gets the number of days in the month, given a year and month value. Automatically corrects for leap year.
+  -
+    name: getTimeZoneOffset
+    arguments: [ timezoneName, isDayLightSavingsTime ]
+    returns: timezoneOffset
+    description: |-
+      Gets the timezone offset if given a [CultureInfo culture-specific] string which is a valid full or abbreviated timezone name and a boolean indicating whether daylight savings time is in effect.
+  -
+    name: getTimeZoneAbbreviation
+    arguments: [ timezoneOffset, isDayLightSavingsTime ]
+    returns: timezoneAbbreviation
+    description: |-
+      Returns a [CultureInfo culture-specific] timezone abbreviation based on a given offset and a boolean indicating whether daylight savings time is in effect.
+instance-methods:
+  -
+    name: clone
+    arguments: []
+    returns: Date
+    description: |-
+      Returns a new Date object that is an exact date and time copy of the original instance.
+  -
+    name: compareTo
+    arguments: [ date ]
+    returns: -1, 0, 1
+    description: Compares this instance to a Date object and return an number indication of their relative values. 1 = this is greater than date, -1 = this is less than date, 0 = values are equal.
+  -
+    name: equals
+    arguments: [ date ]
+    returns: true or false
+    description: Compares this instance to another Date object and returns true if they are equal, false otherwise.
+  -
+    name: between
+    arguments: [ startDate, endDate ]
+    returns: true of false
+    description: Determines is this instance is between a range of two dates or equal to either the start or end dates.
+  - 
+    name: addMilliseconds
+    arguments: [ milliseconds ]
+    returns: this
+    description: Adds the specified number of milliseconds to this instance.
+  -
+    name: addSeconds
+    arguments: [ seconds ]
+    returns: this
+    description: Adds the specified number of seconds to this instance given the number of seconds to add. The number can be positive or negative.
+  -
+    name: addMinutes
+    arguments: [ minutes ]
+    returns: this
+    description: Adds the specified number of minutes to this instance given the number of minutes to add. The number can be positive or negative.
+  - 
+    name: addHours
+    arguments: [ hours ]
+    returns: this
+    description: Adds the specified number of hours to this instance given the number of hours to add. The number can be positive or negative.
+  -
+    name: addWeeks
+    arguments: [ weeks ]
+    returns: this
+    description: Adds the specified number of weeks to this instance given the number of weeks to add. The number can be positive or negative.
+  - 
+    name: addMonths
+    arguments: [ months ]
+    returns: this
+    description: Adds the specified number of months to this instance given the number of months to add. The number can be positive or negative.
+  -
+    name: addYears
+    arguments: [ years ]
+    returns: this
+    description: Adds the specified number of years to this instance given the number of years to add. The number can be positive or negative.
+  -
+    name: add
+    arguments: [ object ]
+    returns: this
+    description: Adds (or subtracts) to the value of the year, month, day, hour, minute, second, millisecond of the date instance using given configuration object. Positive and Negative values allowed.
+  -
+    name: validateMillisecond
+    arguments: [ milliseconds ]
+    returns: true or false
+    description: Validates the number is within an acceptable range for milliseconds [0-999]. Returns true if within range, otherwise false.
+  -
+    name: validateSecond
+    arguments: [ second ]
+    returns: true or false
+    description: Validates the number is within an acceptable range for seconds [0-59]. Returns true if within range, otherwise false.
+  -
+    name: validateMinute
+    arguments: [ minutes ]
+    returns: true or false
+    description: Validates the number is within an acceptable range for minutes [0-59]. Returns true if within range, otherwise false.
+  -
+    name: validateHour
+    arguments: [ hour ]
+    returns: true or false
+    description: Validates the number is within an acceptable range for hours [0-23]. Returns true if within range, otherwise false.
+  -
+    name: validateDay
+    arguments: [ day, year, monthNumber ]
+    returns: true or false
+    description: Validates the number is within an acceptable range for the days in a month [0-MaxDaysInMonth].
+  -
+    name: validateMonth
+    arguments: [ month ]
+    returns: true or false
+    description: Validates the number is within an acceptable range for months [0-11].
+  -
+    name: validateYear
+    arguments: [ year ]
+    returns: true or false
+    description: Validates the number is within an acceptable range for years [0-9999].
+  -
+    name: set
+    arguments: [ object ]
+    returns: this
+    description: Set the value of year, month, day, hour, minute, second, millisecond of date instance using given configuration object.
+  -
+    name: clearTime
+    arguments: []
+    returns: this
+    description: Resets the time of this Date object to 12:00 AM (00:00), which is the start of the day.
+  -
+    name: isLeapYear
+    arguments: []
+    returns: true or false
+    description: Determines whether or not this instance is in a leap year. Returns true if this instance is in a leap year, else false.
+  -
+    name: isWeekday
+    arguments: []
+    returns: true or false
+    description: Determines whether or not this instance is a weekday. Returns true if this instance is a weekday, false otherwise.
+  -
+    name: getDaysInMonth
+    arguments: []
+    returns: true or false
+    description: Get the number of days in the current month, adjusted for leap year. Returns the number of days in the month.
+  -
+    name: moveToFirstDayOfTheMonth
+    arguments: []
+    returns: this
+    description: Moves the date to the first day of the month.
+  -
+    name: moveToLastDayOfTheMonth
+    arguments: []
+    returns: this
+    description: Moves the date to the last day of the month.
+  -
+    name: moveToDayOfWeek
+    arguments: [ dayOfWeek, pastOrFuture ]
+    returns: this
+    description: Move to the next or last dayOfWeek based on the pastOrFuture value - future (+1) or past (-1). Defaults to future. [Optional].
+  -
+    name: moveToMonth
+    arguments: [ monthNumber, pastOrFuture ]
+    returns: this
+    description: Move to the next or previous month indicated by the monthNumber based on the pastOrFuture value - future (+1) or past (-1). Defaults to future. [Optional].
+  -
+    name: getDayOfYear
+    arguments: []
+    returns: dayNumberInYear
+    description: Get the numeric day number of the year, adjusted for leap year.
+  -
+    name: getWeekOfYear
+    arguments: [ firstDayOfWeek ]
+    returns: weekNumberInYear
+    description: Get the week of the year for the current date instance. Takes an optional parameter for the firstDayOfWeek [0-6].
+  -
+    name: isDST
+    arguments: []
+    returns: true or false
+    description: Determine whether Daylight Saving Time (DST) is in effect.
+  -
+    name: getTimezone
+    arguments: []
+    returns: timezoneAbbreviation
+    description: Get the timezone abbreviation of the current date.
+  -
+    name: setTimezoneOffset
+    arguments: [ timezoneOffset ]
+    returns: this
+    description: "Set the timezone for the current date using an offset (ex: '-0700'). Note that in most !JavaScript implementations, this will appear to change the time since the timezone is always based on the locale."
+  -
+    name: setTimezone
+    arguments: [ timezoneAbbreviation ]
+    returns: this
+    description: "Set the timezone for the current date using a [CultureInfo culture-specific] timezone abbreviation (ex: 'PST'). Note that in most !JavaScript implementations, this will appear to change the time since the timezone is always based on the locale."
+  - 
+    name: getUTCOffset
+    arguments: []
+    returns: UTCOffset
+    description: Get the offset from UTC of the current date. Returns the 4-character offset string prefixed with + or - (e.g. "-0500").
+  -
+    name: getDayName
+    arguments: [ useAbbreviation ]
+    returns: dayName
+    description: Gets the name of the day of the week. Set useAbbreviation to true to return the abbreviated name of the day of the week (optional).
+  -
+    name: getMonthName
+    arguments: [ useAbbreviation ]
+    returns: monthName
+    description: Gets the name of the month. Set useAbbreviation to true to return the abbreviated name of the month (optional).
+  -
+    name: toString
+    arguments: [ format ]
+    returns: formattedDateString
+    description: Converts the value of the current Date object to its equivalent string representation. Use format argument to specify format (optional). See FormatStrings for more info.
+  -
+    name: parse
+    arguments: [ dateString ]
+    returns: date
+    description: Converts the specified string value into its !JavaScript Date equivalent using [CultureInfo culture-specific] format information.
+  -
+    name: parseExact
+    arguments: [ dateString, formatStringOrArray ]
+    returns: date
+    description: Converts the specified string value into its !JavaScript Date equivalent using the specified format (string) or formats (array). The format of the string value must match one of the supplied formats exactly.
+  -
+    name: getParseFunction
+    arguments: [ formatStringOrArray ]
+    returns: function
+    description: Returns a function that can be used to parse a string and return a date, given a format (string) or formats (string). The format of the string passed to the resulting function must match one of the supplied formats exactly or a parse exception will be thrown.

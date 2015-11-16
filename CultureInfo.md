@@ -1,0 +1,1 @@
+**NOTE:** [DateJS](http://datejs.com/) has moved to a new home on [GitHub](http://github.com/datejs/)

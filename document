@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'yaml'
+require 'erubis'
+
+file = File.read( 'api.yml' )
+api = YAML.load( file )
+template = File.read( 'template.erb' ) 
+puts Erubis::Eruby.new( template ).result( binding )
+

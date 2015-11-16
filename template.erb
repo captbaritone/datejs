@@ -1,0 +1,29 @@
+#summary Date class and instance methods provided by the DateJS library.
+
+*Version:* <%= api['version'] %>
+
+*Build Date:* <%= api['build-date'] %>
+
+*Copyright:* <%= api['copyright'] %>
+
+*License:* <%= api['license'] %>
+
+= Class Methods =
+
+<% api['class-methods'].sort_by { |m| m['name'] }.each do |method| %>
+*<%= method['name'] %>* ( <%= method['arguments'].join(', ') %> ) : <%= method['returns'] %>
+
+<%= method['description'] %>
+
+
+<% end %>
+
+= Instance Methods =
+
+<% api['instance-methods'].sort_by { |m| m['name'] }.each do |method| %>
+*<%= method['name'] %>* ( <%= method['arguments'].join(', ') %> ) : <%= method['returns'] %>*
+
+<%= method['description'] %>
+
+
+<% end %>
